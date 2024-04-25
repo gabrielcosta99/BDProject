@@ -32,7 +32,7 @@ CREATE TABLE subscription(
 CREATE TABLE exercise(
     num_ex INT PRIMARY KEY,
     path VARCHAR(50),
-    title VARCHAR(50),
+    name VARCHAR(50),
     description VARCHAR(1000),
     muscletargets VARCHAR(50),
     releasedate DATE,
@@ -53,10 +53,9 @@ CREATE TABLE chat(
 CREATE TABLE message(
     num_msg INT PRIMARY KEY,
     chat_num INT,
-    sender INT,
+    sent_by_user INT,
     text VARCHAR(1000),
-    FOREIGN KEY (chat_num) REFERENCES chat(num_chat),
-    FOREIGN KEY (sender) REFERENCES athlete(num_athlete)
+    FOREIGN KEY (chat_num) REFERENCES chat(num_chat)
 );
 
 CREATE TABLE exercise_progress(

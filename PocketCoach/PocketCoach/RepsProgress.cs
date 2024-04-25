@@ -37,7 +37,12 @@ public class RepsProgress
 	}
 
 
-	public RepsProgress() : base()
+    public override String ToString()
+    {
+        return "exercise: " + _num_ex + " set_num: " +_set_num;
+    }
+
+    public RepsProgress() : base()
 	{
 	}
 

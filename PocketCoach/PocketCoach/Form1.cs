@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Data.SqlClient;
-using Microsoft.VisualBasic.ApplicationServices;
 
 namespace PocketCoach
 {
@@ -27,7 +26,7 @@ namespace PocketCoach
         private void Form1_Load(object sender, EventArgs e)
         {
             cn = getSGBDConnection();
-            listBox1_SelectedIndexChanged(sender, e);
+            loadRepsProgressToolStripMenuItem_Click(sender, e);
         }
 
         private SqlConnection getSGBDConnection()
@@ -79,7 +78,7 @@ namespace PocketCoach
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void loadRepsProgressToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!verifySGBDConnection())
                 return;
@@ -128,7 +127,16 @@ namespace PocketCoach
 
 
             currentProgress = 0;
-            ShowRepsProgress();
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex >= 0)
+            {
+                currentProgress = listBox1.SelectedIndex;
+                ShowRepsProgress();
+            }
         }
 
         public void ShowRepsProgress()
@@ -142,6 +150,33 @@ namespace PocketCoach
             set_num.Text = progress.SetNum.ToString();
             num_reps.Text = progress.RepsMade.ToString();
             weight_used.Text = progress.WeightUsed.ToString();
+
+            if (!verifySGBDConnection())
+                return;
+
+            try
+            {
+                //MessageBox.Show("num_ex: " + num_ex.Text);
+                SqlCommand cmd = new SqlCommand("SELECT path FROM exercise WHERE num_ex=@num_ex", cn);
+                cmd.Parameters.AddWithValue("@num_ex", num_ex.Text);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                if (reader.Read())
+                {
+                    videopath = reader["path"].ToString();
+                    //MessageBox.Show("path: " + videopath);
+                }
+                else
+                {
+                    MessageBox.Show("No data found for num_ex: " + progress.NumEx);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
             /*
             txtID.Text = contact.CustomerID;
             txtCompany.Text = contact.CompanyName;
@@ -154,7 +189,7 @@ namespace PocketCoach
             txtTel.Text = contact.Phone;
             txtFax.Text = contact.Fax;
             */
-
+            cn.Close();
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
@@ -184,8 +219,30 @@ namespace PocketCoach
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            String f = "C:\\Users\\gabvi\\Documents\\Disciplinas\\3º ano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\videos\\uatreino1.mp4";
-            axWindowsMediaPlayer1.URL = f;
+
+            //string currentDirectory = Environment.CurrentDirectory;
+            string f = Path.GetFullPath(videopath);
+            try
+            {
+                axWindowsMediaPlayer1.URL = f;
+                //MessageBox.Show("working directory: " + currentDirectory + "\n directory: " + f);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error: " + ex.Message+ "\n working directory: "+currentDirectory+"\n directory: "+f);
+                MessageBox.Show("Error: " + ex.Message + "\n directory: " + f);
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Create an instance of Form2
+            Form2 form2 = new Form2();
+
+            // Show Form2 and hide the current form
+            form2.Show();
+            this.Hide(); // Optional: Hide the current form
         }
 
         /*

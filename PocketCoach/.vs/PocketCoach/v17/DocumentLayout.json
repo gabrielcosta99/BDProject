@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\repsprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\repsprogress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,23 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RepsProgress.cs",
-              "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\RepsProgress.cs",
-              "RelativeDocumentMoniker": "PocketCoach\\RepsProgress.cs",
-              "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\RepsProgress.cs",
-              "RelativeToolTip": "PocketCoach\\RepsProgress.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAwwCgAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T20:11:45.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "Form2.Designer.cs",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form2.Designer.cs",
               "RelativeDocumentMoniker": "PocketCoach\\Form2.Designer.cs",
@@ -67,20 +51,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form2.cs",
               "RelativeDocumentMoniker": "PocketCoach\\Form2.cs",
               "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form2.cs",
               "RelativeToolTip": "PocketCoach\\Form2.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAYwD8AAAAzAAAA",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAqwHAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-25T16:10:33.062Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form2.cs",
               "RelativeDocumentMoniker": "PocketCoach\\Form2.cs",
@@ -92,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "PocketCoach\\Form1.Designer.cs",
@@ -105,20 +89,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form1.cs",
               "RelativeDocumentMoniker": "PocketCoach\\Form1.cs",
               "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form1.cs",
               "RelativeToolTip": "PocketCoach\\Form1.cs",
-              "ViewState": "AQIAAIQAAAAAAAAAAAA2wJ4AAAAdAAAA",
+              "ViewState": "AQIAAH8BAAAAAAAAAAAUwJIBAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T15:48:09.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Form1.cs",
               "RelativeDocumentMoniker": "PocketCoach\\Form1.cs",

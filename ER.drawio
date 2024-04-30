@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-04-25T20:37:26.223Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="r4s54RpGat0X4671yuLG" version="24.3.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-04-30T17:06:00.990Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="paxNjtIKc-d9K5zFeZzz" version="24.3.0" type="device">
   <diagram name="Página-1" id="xOFyH7ZZ8CpGTi37lhgU">
-    <mxGraphModel dx="3088" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3088" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -216,8 +216,8 @@
         <mxCell id="b22r6mtmfPxNawbEAugW-1" value="&lt;u&gt;num_workout&lt;/u&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-335" y="930" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="b22r6mtmfPxNawbEAugW-2" value="Workout_playlist" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="-360" y="900" width="110" height="30" as="geometry" />
+        <mxCell id="b22r6mtmfPxNawbEAugW-2" value="Workout_exercise" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-365" y="900" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="b22r6mtmfPxNawbEAugW-3" value="&lt;u&gt;num_Ex&lt;/u&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-255" y="930" width="50" height="40" as="geometry" />

@@ -264,7 +264,7 @@ namespace PocketCoach
                 return;
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT reps_progress " + "VALUES (@entry_num, @num_ex, @set_num, @reps_made, " + "@weight_used) ";
+            cmd.CommandText = "INSERT INTO reps_progress " + "VALUES (@entry_num, @num_ex, @set_num, @reps_made, " + "@weight_used) ";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@entry_num", progress.EntryNum);
             cmd.Parameters.AddWithValue("@num_ex", progress.NumEx);
@@ -413,6 +413,7 @@ namespace PocketCoach
             // Create an instance of Form2
             Form2 form2 = new Form2();
 
+            //this.Hide();
             // Show Form2
             form2.Show();
             

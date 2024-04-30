@@ -32,11 +32,15 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtTitle = new TextBox();
             listBox2 = new ListBox();
-            button1 = new Button();
-            button2 = new Button();
+            bttnAdd = new Button();
+            bttnRemove = new Button();
             comboBox1 = new ComboBox();
+            label4 = new Label();
+            bttnUpload = new Button();
+            label5 = new Label();
+            txtTags = new TextBox();
             SuspendLayout();
             // 
             // listBox1
@@ -62,58 +66,58 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(333, 84);
+            label2.Location = new Point(323, 94);
             label2.Name = "label2";
-            label2.Size = new Size(84, 15);
+            label2.Size = new Size(74, 15);
             label2.TabIndex = 2;
-            label2.Text = "workout name";
+            label2.Text = "workout title";
             label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(363, 141);
+            label3.Location = new Point(343, 167);
             label3.Name = "label3";
             label3.Size = new Size(54, 15);
             label3.TabIndex = 3;
             label3.Text = "exercises";
             // 
-            // textBox1
+            // txtTitle
             // 
-            textBox1.Location = new Point(423, 81);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 4;
+            txtTitle.Location = new Point(403, 91);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(100, 23);
+            txtTitle.TabIndex = 4;
             // 
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(423, 141);
+            listBox2.Location = new Point(403, 167);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(120, 94);
             listBox2.TabIndex = 5;
             listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
             // 
-            // button1
+            // bttnAdd
             // 
-            button1.Location = new Point(197, 152);
-            button1.Name = "button1";
-            button1.Size = new Size(67, 23);
-            button1.TabIndex = 6;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            bttnAdd.Location = new Point(197, 152);
+            bttnAdd.Name = "bttnAdd";
+            bttnAdd.Size = new Size(67, 23);
+            bttnAdd.TabIndex = 6;
+            bttnAdd.Text = "Add";
+            bttnAdd.UseVisualStyleBackColor = true;
+            bttnAdd.Click += button1_Click;
             // 
-            // button2
+            // bttnRemove
             // 
-            button2.Location = new Point(437, 259);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 7;
-            button2.Text = "Remove";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            bttnRemove.Location = new Point(417, 285);
+            bttnRemove.Name = "bttnRemove";
+            bttnRemove.Size = new Size(75, 23);
+            bttnRemove.TabIndex = 7;
+            bttnRemove.Text = "Remove";
+            bttnRemove.UseVisualStyleBackColor = true;
+            bttnRemove.Click += button2_Click;
             // 
             // comboBox1
             // 
@@ -124,16 +128,56 @@
             comboBox1.TabIndex = 8;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 58);
+            label4.Name = "label4";
+            label4.Size = new Size(86, 15);
+            label4.TabIndex = 9;
+            label4.Text = "list of exercises";
+            // 
+            // bttnUpload
+            // 
+            bttnUpload.Location = new Point(323, 405);
+            bttnUpload.Name = "bttnUpload";
+            bttnUpload.Size = new Size(122, 23);
+            bttnUpload.TabIndex = 10;
+            bttnUpload.Text = "Upload Workout";
+            bttnUpload.UseVisualStyleBackColor = true;
+            bttnUpload.Click += bttnUpload_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(368, 132);
+            label5.Name = "label5";
+            label5.Size = new Size(29, 15);
+            label5.TabIndex = 11;
+            label5.Text = "tags";
+            // 
+            // txtTags
+            // 
+            txtTags.Location = new Point(403, 129);
+            txtTags.Name = "txtTags";
+            txtTags.Size = new Size(176, 23);
+            txtTags.TabIndex = 12;
+            txtTags.TextChanged += textBox1_TextChanged;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 518);
+            Controls.Add(txtTags);
+            Controls.Add(label5);
+            Controls.Add(bttnUpload);
+            Controls.Add(label4);
             Controls.Add(comboBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(bttnRemove);
+            Controls.Add(bttnAdd);
             Controls.Add(listBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtTitle);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -151,10 +195,14 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtTitle;
         private ListBox listBox2;
-        private Button button1;
-        private Button button2;
+        private Button bttnAdd;
+        private Button bttnRemove;
         private ComboBox comboBox1;
+        private Label label4;
+        private Button bttnUpload;
+        private Label label5;
+        private TextBox txtTags;
     }
 }

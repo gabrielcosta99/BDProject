@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Data.SqlClient;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PocketCoach
 {
@@ -62,16 +64,7 @@ namespace PocketCoach
             while (reader.Read())
             {
                 Exercise exercise = new Exercise();
-                int numEx;
-                if (int.TryParse(reader["num_ex"].ToString(), out numEx))
-                {
-                    exercise.NumEx = numEx;
-                }
-                else
-                {
-                    // Conversion failed, handle the error or use a default value
-                }
-
+                exercise.NumEx = int.Parse(reader["num_ex"].ToString());
                 exercise.Path = reader["path"].ToString();
                 exercise.Name = reader["name"].ToString();
                 exercise.Description = reader["description"].ToString();
@@ -117,6 +110,82 @@ namespace PocketCoach
         private void button2_Click(object sender, EventArgs e)  //Button "remove"
         {
             listBox2.Items.Remove(listBox2.SelectedItem);
+        }
+        private void ClearFields()
+        {
+            txtTags.Text = "";
+            txtTitle.Text = "";
+        }
+        private void bttnUpload_Click(object sender, EventArgs e)
+        {
+
+            if (!verifySGBDConnection())
+                return;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM workout WHERE num_workout=(SELECT MAX(num_workout) FROM workout);";
+            cmd.Connection = cn;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            int num_workout = 1;
+            if (reader.Read())
+            {
+                num_workout = int.Parse(reader["num_workout"].ToString()) + 1;
+            }
+            reader.Close();
+            cn.Close();
+
+            cn.Open();
+            if (!verifySGBDConnection())
+                return;
+            //Workout workout = new Workout();
+            cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO workout " + "VALUES (@num_workout, @title, @tags)";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@num_workout", num_workout);
+            cmd.Parameters.AddWithValue("@title", txtTitle.Text);
+            cmd.Parameters.AddWithValue("@tags", txtTags.Text);
+            cmd.Connection = cn;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+
+
+            for(int i = 0; i < listBox2.Items.Count; i++)
+            {
+                Exercise exercise = (Exercise)listBox2.Items[i];
+                cmd.CommandText = "INSERT INTO workout_exercise " + "VALUES (@num_workout, @num_exercise)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@num_workout", num_workout);
+                cmd.Parameters.AddWithValue("@num_exercise", exercise.NumEx);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Failed to update contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+                }
+            }  
+
+            // Does this message always show even when it is not successful?
+            MessageBox.Show("Workout uploaded successfully!");      
+            listBox2.Items.Clear();
+            ClearFields();
+
+            cn.Close();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

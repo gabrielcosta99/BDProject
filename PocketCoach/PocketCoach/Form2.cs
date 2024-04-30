@@ -81,6 +81,7 @@ namespace PocketCoach
                 exercise.PTNum = int.Parse(reader["PT_num"].ToString());
                 exercise.Thumbnail = reader["thumbnail"].ToString();
                 listBox1.Items.Add(exercise);
+                comboBox1.Items.Add(exercise);
 
 
             }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabvi\\Documents\\Disciplinas\\3º ano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj": {}
+    "C:\\Users\\gabvi\\Documents\\Disciplinas\\3ºano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabvi\\Documents\\Disciplinas\\3º ano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj": {
+    "C:\\Users\\gabvi\\Documents\\Disciplinas\\3ºano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3º ano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj",
+        "projectUniqueName": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3ºano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj",
         "projectName": "PocketCoach",
-        "projectPath": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3º ano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj",
+        "projectPath": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3ºano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PocketCoach.csproj",
         "packagesPath": "C:\\Users\\gabvi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3º ano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\obj\\",
+        "outputPath": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3ºano\\2ºsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gabvi\\AppData\\Roaming\\NuGet\\NuGet.Config",

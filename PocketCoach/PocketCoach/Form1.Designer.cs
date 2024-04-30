@@ -32,34 +32,29 @@ namespace PocketCoach
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            set_num = new TextBox();
             label1 = new Label();
-            num_reps = new TextBox();
             label2 = new Label();
-            Confirm = new Button();
-            button2 = new Button();
             listBox1 = new ListBox();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            num_ex = new TextBox();
-            weight_used = new TextBox();
-            entry_num = new TextBox();
+            txtNumEx = new TextBox();
+            txtWeightUsed = new TextBox();
+            txtEntryNum = new TextBox();
+            txtRepsMade = new TextBox();
+            txtSetNum = new TextBox();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            button1 = new Button();
             bindingSource1 = new BindingSource(components);
+            bttnConfirm = new Button();
+            bttnPlay = new Button();
+            bttnCancel = new Button();
             button3 = new Button();
+            bttnAdd = new Button();
+            bttnEdit = new Button();
+            bttnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
-            // 
-            // set_num
-            // 
-            set_num.Location = new Point(402, 117);
-            set_num.Name = "set_num";
-            set_num.Size = new Size(100, 23);
-            set_num.TabIndex = 1;
-            set_num.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
@@ -71,14 +66,6 @@ namespace PocketCoach
             label1.Text = "set number";
             label1.Click += label1_Click;
             // 
-            // num_reps
-            // 
-            num_reps.Location = new Point(402, 155);
-            num_reps.Name = "num_reps";
-            num_reps.Size = new Size(100, 23);
-            num_reps.TabIndex = 3;
-            num_reps.TextChanged += textBox2_TextChanged;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -88,26 +75,6 @@ namespace PocketCoach
             label2.TabIndex = 4;
             label2.Text = "number of reps";
             label2.Click += label2_Click_1;
-            // 
-            // Confirm
-            // 
-            Confirm.Location = new Point(329, 230);
-            Confirm.Name = "Confirm";
-            Confirm.Size = new Size(75, 23);
-            Confirm.TabIndex = 5;
-            Confirm.Text = "Confirmar";
-            Confirm.UseVisualStyleBackColor = true;
-            Confirm.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(427, 230);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 6;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // listBox1
             // 
@@ -146,29 +113,45 @@ namespace PocketCoach
             label5.TabIndex = 10;
             label5.Text = "weight used";
             // 
-            // num_ex
+            // txtNumEx
             // 
-            num_ex.Location = new Point(402, 88);
-            num_ex.Name = "num_ex";
-            num_ex.Size = new Size(100, 23);
-            num_ex.TabIndex = 12;
-            num_ex.TextChanged += textBox2_TextChanged_1;
+            txtNumEx.Location = new Point(402, 88);
+            txtNumEx.Name = "txtNumEx";
+            txtNumEx.Size = new Size(100, 23);
+            txtNumEx.TabIndex = 12;
+            txtNumEx.TextChanged += textBox2_TextChanged_1;
             // 
-            // weight_used
+            // txtWeightUsed
             // 
-            weight_used.Location = new Point(402, 192);
-            weight_used.Name = "weight_used";
-            weight_used.Size = new Size(100, 23);
-            weight_used.TabIndex = 11;
-            weight_used.TextChanged += textBox1_TextChanged_2;
+            txtWeightUsed.Location = new Point(402, 192);
+            txtWeightUsed.Name = "txtWeightUsed";
+            txtWeightUsed.Size = new Size(100, 23);
+            txtWeightUsed.TabIndex = 11;
+            txtWeightUsed.TextChanged += textBox1_TextChanged_2;
             // 
-            // entry_num
+            // txtEntryNum
             // 
-            entry_num.Location = new Point(402, 58);
-            entry_num.Name = "entry_num";
-            entry_num.Size = new Size(100, 23);
-            entry_num.TabIndex = 13;
-            entry_num.TextChanged += textBox3_TextChanged;
+            txtEntryNum.Location = new Point(402, 58);
+            txtEntryNum.Name = "txtEntryNum";
+            txtEntryNum.Size = new Size(100, 23);
+            txtEntryNum.TabIndex = 13;
+            txtEntryNum.TextChanged += textBox3_TextChanged;
+            // 
+            // txtRepsMade
+            // 
+            txtRepsMade.Location = new Point(402, 155);
+            txtRepsMade.Name = "txtRepsMade";
+            txtRepsMade.Size = new Size(100, 23);
+            txtRepsMade.TabIndex = 3;
+            txtRepsMade.TextChanged += textBox2_TextChanged;
+            // 
+            // txtSetNum
+            // 
+            txtSetNum.Location = new Point(402, 117);
+            txtSetNum.Name = "txtSetNum";
+            txtSetNum.Size = new Size(100, 23);
+            txtSetNum.TabIndex = 1;
+            txtSetNum.TextChanged += textBox1_TextChanged;
             // 
             // axWindowsMediaPlayer1
             // 
@@ -181,16 +164,36 @@ namespace PocketCoach
             axWindowsMediaPlayer1.TabIndex = 14;
             axWindowsMediaPlayer1.Enter += axWindowsMediaPlayer1_Enter;
             // 
-            // button1
+            // bttnConfirm
             // 
-            button1.Location = new Point(570, 250);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 22);
-            button1.TabIndex = 15;
-            button1.Text = "play";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            bttnConfirm.Location = new Point(312, 230);
+            bttnConfirm.Name = "bttnConfirm";
+            bttnConfirm.Size = new Size(75, 23);
+            bttnConfirm.TabIndex = 5;
+            bttnConfirm.Text = "Confirm";
+            bttnConfirm.UseVisualStyleBackColor = true;
+            bttnConfirm.Click += bttnConfirm_Click;
+            // 
+            // bttnPlay
+            // 
+            bttnPlay.Location = new Point(570, 250);
+            bttnPlay.Margin = new Padding(3, 2, 3, 2);
+            bttnPlay.Name = "bttnPlay";
+            bttnPlay.Size = new Size(82, 22);
+            bttnPlay.TabIndex = 15;
+            bttnPlay.Text = "Play";
+            bttnPlay.UseVisualStyleBackColor = true;
+            bttnPlay.Click += bttnPlay_Click;
+            // 
+            // bttnCancel
+            // 
+            bttnCancel.Location = new Point(402, 230);
+            bttnCancel.Name = "bttnCancel";
+            bttnCancel.Size = new Size(75, 23);
+            bttnCancel.TabIndex = 6;
+            bttnCancel.Text = "Cancel";
+            bttnCancel.UseVisualStyleBackColor = true;
+            bttnCancel.Click += bttnCancel_Click;
             // 
             // button3
             // 
@@ -202,27 +205,60 @@ namespace PocketCoach
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // bttnAdd
+            // 
+            bttnAdd.Location = new Point(346, 230);
+            bttnAdd.Name = "bttnAdd";
+            bttnAdd.Size = new Size(75, 23);
+            bttnAdd.TabIndex = 17;
+            bttnAdd.Text = "Add";
+            bttnAdd.UseVisualStyleBackColor = true;
+            bttnAdd.Click += bttnAdd_Click;
+            // 
+            // bttnEdit
+            // 
+            bttnEdit.Location = new Point(265, 230);
+            bttnEdit.Name = "bttnEdit";
+            bttnEdit.Size = new Size(75, 23);
+            bttnEdit.TabIndex = 18;
+            bttnEdit.Text = "Edit";
+            bttnEdit.UseVisualStyleBackColor = true;
+            bttnEdit.Click += bttnEdit_Click;
+            // 
+            // bttnDelete
+            // 
+            bttnDelete.Location = new Point(427, 230);
+            bttnDelete.Name = "bttnDelete";
+            bttnDelete.Size = new Size(75, 23);
+            bttnDelete.TabIndex = 19;
+            bttnDelete.Text = "Delete";
+            bttnDelete.UseVisualStyleBackColor = true;
+            bttnDelete.Click += bttnDelete_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bttnDelete);
+            Controls.Add(bttnEdit);
+            Controls.Add(bttnAdd);
             Controls.Add(button3);
-            Controls.Add(button1);
+            Controls.Add(bttnPlay);
             Controls.Add(axWindowsMediaPlayer1);
-            Controls.Add(entry_num);
-            Controls.Add(weight_used);
-            Controls.Add(num_ex);
+            Controls.Add(txtEntryNum);
+            Controls.Add(txtWeightUsed);
+            Controls.Add(txtNumEx);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(listBox1);
-            Controls.Add(button2);
-            Controls.Add(Confirm);
+            Controls.Add(bttnCancel);
+            Controls.Add(bttnConfirm);
             Controls.Add(label2);
-            Controls.Add(num_reps);
+            Controls.Add(txtRepsMade);
             Controls.Add(label1);
-            Controls.Add(set_num);
+            Controls.Add(txtSetNum);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -234,24 +270,27 @@ namespace PocketCoach
 
         #endregion
 
-        private TextBox set_num;
+        private TextBox txtSetNum;
         private Label label1;
-        private TextBox num_reps;
+        private TextBox txtRepsMade;
         private Label label2;
-        private Button Confirm;
-        private Button button2;
+        private Button bttnConfirm;
+        private Button bttnCancel;
         private ListBox listBox1;
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox num_ex;
-        private TextBox weight_used;
-        private TextBox entry_num;
+        private TextBox txtNumEx;
+        private TextBox txtWeightUsed;
+        private TextBox txtEntryNum;
 
         private string videopath;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
-        private Button button1;
+        private Button bttnPlay;
         private BindingSource bindingSource1;
         private Button button3;
+        private Button bttnAdd;
+        private Button bttnEdit;
+        private Button bttnDelete;
     }
 }

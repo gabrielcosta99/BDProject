@@ -45,3 +45,34 @@ C:\Users\gabvi\Documents\Disciplinas\3º ano\2ºsemestre\BD\P\APFE_109050_108342
 C:\Users\gabvi\Documents\Disciplinas\3º ano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\PocketCoach.pdb
 C:\Users\gabvi\Documents\Disciplinas\3º ano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.genruntimeconfig.cache
 C:\Users\gabvi\Documents\Disciplinas\3º ano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\ref\PocketCoach.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\PocketCoach.exe
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\PocketCoach.deps.json
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\PocketCoach.runtimeconfig.json
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\PocketCoach.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\PocketCoach.pdb
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\Interop.WMPLib.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\bin\Debug\net8.0-windows\AxInterop.WMPLib.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.csproj.AssemblyReference.cache
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\Interop.WMPLib.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\AxInterop.WMPLib.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.csproj.ResolveComReference.cache
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.Form1.resources
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.Form2.resources
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.csproj.GenerateResource.cache
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.AssemblyInfoInputs.cache
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.AssemblyInfo.cs
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.csproj.CoreCompileInputs.cache
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.sourcelink.json
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCo.BB0592FE.Up2Date
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\refint\PocketCoach.dll
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.pdb
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.genruntimeconfig.cache
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\ref\PocketCoach.dll

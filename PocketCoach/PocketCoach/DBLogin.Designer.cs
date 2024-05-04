@@ -35,7 +35,6 @@
             txtUsername = new TextBox();
             txtPassword = new TextBox();
             bttnLogin = new Button();
-            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -97,7 +96,7 @@
             // 
             // bttnLogin
             // 
-            bttnLogin.Location = new Point(136, 243);
+            bttnLogin.Location = new Point(241, 240);
             bttnLogin.Name = "bttnLogin";
             bttnLogin.Size = new Size(169, 68);
             bttnLogin.TabIndex = 6;
@@ -105,22 +104,11 @@
             bttnLogin.UseVisualStyleBackColor = true;
             bttnLogin.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(337, 243);
-            button2.Name = "button2";
-            button2.Size = new Size(195, 68);
-            button2.TabIndex = 7;
-            button2.Text = "Hello Table";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // DBLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(683, 362);
-            Controls.Add(button2);
             Controls.Add(bttnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
@@ -144,6 +132,5 @@
         private TextBox txtUsername;
         private TextBox txtPassword;
         private Button bttnLogin;
-        private Button button2;
     }
 }

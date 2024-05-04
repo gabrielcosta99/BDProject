@@ -47,26 +47,48 @@ namespace PocketCoach
 
         private void txtAthleteNum_TextChanged(object sender, EventArgs e)
         {
-            if(!isPT)
-            {
-                athleteNum = int.Parse(txtAthleteNum.Text);
-            }
+
         }
 
         private void txtPTNum_TextChanged(object sender, EventArgs e)
         {
-            if(isPT)
-            {
-                PTNum = int.Parse(txtPTNum.Text);
-
-            }
+            
         }
 
         private void bttnSelect_Click(object sender, EventArgs e)
         {
-            Form form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            bool validNumber = true;
+            if (isPT)
+            {
+                try
+                {
+                    PTNum = int.Parse(txtPTNum.Text);
+                }
+                catch
+                {
+                    validNumber = false;
+                    MessageBox.Show("Enter a valid PT number");
+                }
+            }
+            else
+            {
+                try
+                {
+                    athleteNum = int.Parse(txtAthleteNum.Text);
+                }
+                catch
+                {
+                    validNumber=false;
+                    MessageBox.Show("Enter a valid Athlete number");
+                }
+            }
+            if(validNumber)
+            {
+                Form form1 = new Form1();
+                form1.Show();
+                this.Hide();
+            }
+            
         }
 
 

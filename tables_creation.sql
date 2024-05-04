@@ -95,16 +95,16 @@ CREATE TABLE reps_progress(
 );
 
 CREATE TABLE workout(
-    workout_num INT PRIMARY KEY,
-    workout_name VARCHAR(50),
+    num_workout INT PRIMARY KEY,
+    title VARCHAR(50),
     tags VARCHAR(50),
 );
 
-CREATE TABLE workout_playlist(
-    workout_num INT,
+CREATE TABLE workout_exercise(
+    num_workout INT,
     num_ex INT,
-    PRIMARY KEY (workout_num, num_ex),
-    FOREIGN KEY (workout_num) REFERENCES workout(workout_num),
+    PRIMARY KEY (num_workout, num_ex),
+    FOREIGN KEY (num_workout) REFERENCES workout(num_workout),
     FOREIGN KEY (num_ex) REFERENCES exercise(num_ex)
 );
 

@@ -25,19 +25,22 @@ namespace PocketCoach
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            cn = getSGBDConnection();
+            cn = DBLogin.getSGBDConnection();
             loadExerciseToolStripMenuItem_Click(sender, e);
         }
 
+        /*
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= LAPTOP-5HIDEPJS\\SQLEXPRESS;integrated security=true;initial catalog=PocketCoach;");
+            //return new SqlConnection("data source= LAPTOP-5HIDEPJS\\SQLEXPRESS;integrated security=true;initial catalog=PocketCoach;");
+            return new SqlConnection("data source= tcp:mednat.ieeta.pt\\SQLSERVER,8101;initial catalog=p7g6;uid=p7g6;password=BDgahe2003;");
         }
+        */
 
         private bool verifySGBDConnection()
         {
             if (cn == null)
-                cn = getSGBDConnection();
+                cn = DBLogin.getSGBDConnection();
 
             if (cn.State != ConnectionState.Open)
                 cn.Open();

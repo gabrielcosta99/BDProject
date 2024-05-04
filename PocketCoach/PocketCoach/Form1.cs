@@ -25,20 +25,23 @@ namespace PocketCoach
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cn = getSGBDConnection();
+            cn = DBLogin.getSGBDConnection();
             loadRepsProgressToolStripMenuItem_Click(sender, e);
             ShowButtons();
         }
 
+        /*
         private SqlConnection getSGBDConnection()
         {
-            return new SqlConnection("data source= LAPTOP-5HIDEPJS\\SQLEXPRESS;integrated security=true;initial catalog=PocketCoach;");
+            //return new SqlConnection("data source= LAPTOP-5HIDEPJS\\SQLEXPRESS;integrated security=true;initial catalog=PocketCoach;");
+            return new SqlConnection("data source= tcp:mednat.ieeta.pt\\SQLSERVER,8101;initial catalog=p7g6;uid=p7g6;password=BDgahe2003;");
         }
+        */
 
         private bool verifySGBDConnection()
         {
             if (cn == null)
-                cn = getSGBDConnection();
+                cn = DBLogin.getSGBDConnection();
 
             if (cn.State != ConnectionState.Open)
                 cn.Open();
@@ -82,16 +85,7 @@ namespace PocketCoach
             {
                 RepsProgress progress = new RepsProgress();
                 progress.EntryNum = int.Parse(reader["entry_num"].ToString());
-                int numEx;
-                if (int.TryParse(reader["num_ex"].ToString(), out numEx))
-                {
-                    progress.NumEx = numEx;
-                }
-                else
-                {
-                    // Conversion failed, handle the error or use a default value
-                }
-
+                progress.NumEx = int.Parse(reader["num_ex"].ToString());
                 progress.SetNum = int.Parse(reader["set_num"].ToString());
                 progress.RepsMade = int.Parse(reader["reps_made"].ToString());
                 progress.WeightUsed = int.Parse(reader["weight_used"].ToString());

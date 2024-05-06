@@ -84,8 +84,8 @@ namespace PocketCoach
             }
             if(validNumber)
             {
-                Form form1 = new Form1();
-                form1.Show();
+                Form workouts = new Workouts();
+                workouts.Show();
                 this.Hide();
             }
             

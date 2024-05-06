@@ -163,18 +163,7 @@ namespace PocketCoach
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
-            /*
-            txtID.Text = contact.CustomerID;
-            txtCompany.Text = contact.CompanyName;
-            txtContact.Text = contact.ContactName;
-            txtAddress1.Text = contact.Address1;
-            txtCity.Text = contact.City;
-            txtState.Text = contact.State;
-            txtZIP.Text = contact.ZIP;
-            txtCountry.Text = contact.Country;
-            txtTel.Text = contact.Phone;
-            txtFax.Text = contact.Fax;
-            */
+           
             cn.Close();
         }
 
@@ -475,60 +464,10 @@ namespace PocketCoach
                 {
                     ShowRepsProgress();
                 }
-                }
+            }
             
         }
 
-        /*
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!verifySGBDConnection())
-                return;
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM exercise_progress", cn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            listBox1.Items.Clear();
-
-            while (reader.Read())
-            {
-                ExerciseProgress progress = new ExerciseProgress();
-                int entryNum;
-                if (int.TryParse(reader["EntryNum"].ToString(), out entryNum))
-                {
-                    progress.EntryNum = entryNum;
-                }
-                else
-                {
-                    // Conversion failed, handle the error or use a default value
-                }
-
-                progress.AthleteNum = int.Parse(reader["AthleteNum"].ToString());
-                progress.Date = reader["Date"].ToString();
-                listBox1.Items.Add(progress);
-
-
-                /*
-                C.CustomerID = reader["CustomerID"].ToString();
-                C.CompanyName = reader["CompanyName"].ToString();
-                C.ContactName = reader["ContactName"].ToString();
-                C.Address1 = reader["Address"].ToString();
-                C.City = reader["City"].ToString();
-                C.State = reader["Region"].ToString();
-                C.ZIP = reader["PostalCode"].ToString();
-                C.Country = reader["Country"].ToString();
-                C.Phone = reader["Phone"].ToString();
-                C.Fax = reader["Fax"].ToString();
-                listBox1.Items.Add(C);
-
-            }
-
-            cn.Close();
-
-
-            //currentContact = 0;
-            //ShowContact();
-        }
-        */
 
     }
 }

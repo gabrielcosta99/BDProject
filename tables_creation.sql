@@ -22,8 +22,8 @@ CREATE TABLE personal_trainer(
 );
 
 CREATE TABLE subscription(
-    num_PT INT,
     num_athlete INT,
+    num_PT INT,
     PRIMARY KEY (num_PT, num_athlete),
     FOREIGN KEY (num_PT) REFERENCES personal_trainer(num_PT),
     FOREIGN KEY (num_athlete) REFERENCES athlete(num_athlete)
@@ -36,7 +36,6 @@ CREATE TABLE exercise(
     description VARCHAR(1000),
     muscletargets VARCHAR(50),
     releasedate DATE,
-    premium INT,
     PT_num INT,
     thumbnail VARCHAR(50),
     FOREIGN KEY (PT_num) REFERENCES personal_trainer(num_PT)
@@ -98,6 +97,9 @@ CREATE TABLE workout(
     num_workout INT PRIMARY KEY,
     title VARCHAR(50),
     tags VARCHAR(50),
+	premium INT,
+	PT_num INT,
+	FOREIGN KEY (PT_num) REFERENCES personal_trainer(num_PT)
 );
 
 CREATE TABLE workout_exercise(

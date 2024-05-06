@@ -78,3 +78,4 @@ C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\ref\PocketCoach.dll
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.DBLogin.resources
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.UserLogin.resources
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.Workouts.resources

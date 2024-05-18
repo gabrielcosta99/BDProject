@@ -82,13 +82,22 @@ namespace PocketCoach
                     MessageBox.Show("Enter a valid Athlete number");
                 }
             }
-            if(validNumber)
+
+            if (validNumber)
             {
-                Form workouts = new Workouts();
-                workouts.Show();
-                this.Hide();
+                if (isPT)
+                {
+                    Form form2 = new Form2();
+                    form2.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Form workouts = new Workouts();
+                    workouts.Show();
+                    this.Hide();
+                }
             }
-            
         }
 
 

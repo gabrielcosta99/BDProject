@@ -87,7 +87,7 @@ namespace PocketCoach
             cn.Close();
 
             cn.Open();
-            for(int i = 0; i < exercises.Count; i++)
+            for (int i = 0; i < exercises.Count; i++)
             {
                 try
                 {
@@ -106,7 +106,7 @@ namespace PocketCoach
                 }
             }
 
-            
+
             cn.Close();
         }
 
@@ -133,6 +133,13 @@ namespace PocketCoach
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bttnCheckItOut_Click(object sender, EventArgs e)
+        {
+            Form form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

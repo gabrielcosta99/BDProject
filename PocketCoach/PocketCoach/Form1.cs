@@ -394,7 +394,7 @@ namespace PocketCoach
         private void button3_Click(object sender, EventArgs e)  // form2 button
         {
             // Create an instance of Form2
-            Form2 form2 = new Form2();
+            CreateWorkout form2 = new CreateWorkout();
 
             //this.Hide();
             // Show Form2

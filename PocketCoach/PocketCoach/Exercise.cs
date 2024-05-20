@@ -8,7 +8,7 @@ public class Exercise
 	private string _description;
 	private string _muscletargets;
 	private string _releasedate;
-	private int _premium;
+	//private int _premium;
 	private int _PT_num;
 	private string _thumbnail;
 
@@ -47,12 +47,13 @@ public class Exercise
 		get { return _releasedate; }
 		set { _releasedate = value; }
 	}
+	/*
 
 	public int Premium
 	{
 		get { return _premium; }
 		set { _premium = value; }
-	}
+	}*/
 
 	public int PTNum
 	{
@@ -78,7 +79,7 @@ public class Exercise
 	}
 
 
-    public Exercise(int num_ex, string path, string name, string description, string muscletargets, string releasedate, int premium, int PT_num, string thumbnail) : base()
+    public Exercise(int num_ex, string path, string name, string description, string muscletargets, string releasedate, int PT_num, string thumbnail) : base()
 	{
 		this._num_ex = num_ex;
 		this._path = path;
@@ -86,7 +87,7 @@ public class Exercise
 		this._description = description;
 		this._muscletargets = muscletargets;
 		this._releasedate = releasedate;
-		this._premium = premium;
+		//this._premium = premium;
 		this._PT_num = PT_num;
 		this._thumbnail = thumbnail;
 	}

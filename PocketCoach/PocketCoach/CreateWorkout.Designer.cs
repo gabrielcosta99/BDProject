@@ -1,6 +1,6 @@
 ﻿namespace PocketCoach
 {
-    partial class Form2
+    partial class CreateWorkout
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             bttnUpload = new Button();
             label5 = new Label();
             txtTags = new TextBox();
+            chkIsPremium = new CheckBox();
             SuspendLayout();
             // 
             // listBox1
@@ -76,7 +77,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(343, 167);
+            label3.Location = new Point(343, 214);
             label3.Name = "label3";
             label3.Size = new Size(54, 15);
             label3.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(403, 167);
+            listBox2.Location = new Point(403, 214);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(120, 94);
             listBox2.TabIndex = 5;
@@ -111,7 +112,7 @@
             // 
             // bttnRemove
             // 
-            bttnRemove.Location = new Point(417, 285);
+            bttnRemove.Location = new Point(417, 332);
             bttnRemove.Name = "bttnRemove";
             bttnRemove.Size = new Size(75, 23);
             bttnRemove.TabIndex = 7;
@@ -164,11 +165,23 @@
             txtTags.TabIndex = 12;
             txtTags.TextChanged += textBox1_TextChanged;
             // 
-            // Form2
+            // chkIsPremium
+            // 
+            chkIsPremium.AutoSize = true;
+            chkIsPremium.Location = new Point(429, 167);
+            chkIsPremium.Name = "chkIsPremium";
+            chkIsPremium.Size = new Size(86, 19);
+            chkIsPremium.TabIndex = 13;
+            chkIsPremium.Text = "is Premium";
+            chkIsPremium.UseVisualStyleBackColor = true;
+            chkIsPremium.CheckedChanged += this.chkIsPremium_CheckedChanged;
+            // 
+            // CreateWorkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 518);
+            Controls.Add(chkIsPremium);
             Controls.Add(txtTags);
             Controls.Add(label5);
             Controls.Add(bttnUpload);
@@ -182,8 +195,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(listBox1);
-            Name = "Form2";
-            Text = "Form2";
+            Name = "CreateWorkout";
+            Text = "CreateWorkout";
             Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -204,5 +217,6 @@
         private Button bttnUpload;
         private Label label5;
         private TextBox txtTags;
+        private CheckBox chkIsPremium;
     }
 }

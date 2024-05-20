@@ -87,7 +87,7 @@ namespace PocketCoach
             {
                 if (isPT)
                 {
-                    Form form2 = new Form2();
+                    Form form2 = new CreateWorkout();
                     form2.Show();
                     this.Hide();
                 }

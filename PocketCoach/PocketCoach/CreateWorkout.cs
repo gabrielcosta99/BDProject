@@ -13,12 +13,13 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PocketCoach
 {
-    public partial class Form2 : Form
+    public partial class CreateWorkout : Form
     {
 
         private SqlConnection cn;
+        private bool isPremium = false;
 
-        public Form2()
+        public CreateWorkout()
         {
             InitializeComponent();
         }
@@ -73,7 +74,7 @@ namespace PocketCoach
                 exercise.Description = reader["description"].ToString();
                 exercise.MuscleTargets = reader["muscletargets"].ToString();
                 exercise.ReleaseDate = reader["releasedate"].ToString();
-                exercise.Premium = int.Parse(reader["premium"].ToString());
+                //exercise.Premium = int.Parse(reader["premium"].ToString());
                 exercise.PTNum = int.Parse(reader["PT_num"].ToString());
                 exercise.Thumbnail = reader["thumbnail"].ToString();
                 listBox1.Items.Add(exercise);
@@ -143,11 +144,13 @@ namespace PocketCoach
                 return;
             //Workout workout = new Workout();
             cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO workout " + "VALUES (@num_workout, @title, @tags)";
+            cmd.CommandText = "INSERT INTO workout(num_workout, title, tags,premium,PT_num) " + "VALUES (@num_workout, @title, @tags,@PT_num)";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@num_workout", num_workout);
             cmd.Parameters.AddWithValue("@title", txtTitle.Text);
             cmd.Parameters.AddWithValue("@tags", txtTags.Text);
+            cmd.Parameters.AddWithValue("@premium", isPremium);
+            cmd.Parameters.AddWithValue("@PT_num", UserLogin.PTNum);
             cmd.Connection = cn;
 
             try
@@ -156,7 +159,7 @@ namespace PocketCoach
             }
             catch (Exception ex)
             {
-                throw new Exception("Failed to update contact in database. \n ERROR MESSAGE: \n" + ex.Message);
+                throw new Exception("Failed to update workout in database. \n ERROR MESSAGE: \n" + ex.Message);
             }
 
 
@@ -190,5 +193,11 @@ namespace PocketCoach
         {
 
         }
+
+
+        private void chkIsPremium_CheckedChanged(object sender , EventArgs e)
+        {
+            isPremium = !isPremium;
+        } 
     }
 }

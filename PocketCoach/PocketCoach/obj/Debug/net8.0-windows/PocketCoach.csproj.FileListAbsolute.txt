@@ -63,7 +63,6 @@ C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\AxInterop.WMPLib.dll
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.csproj.ResolveComReference.cache
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.Form1.resources
-C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.Form2.resources
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.csproj.GenerateResource.cache
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.AssemblyInfoInputs.cache
@@ -79,3 +78,4 @@ C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.DBLogin.resources
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.UserLogin.resources
 C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.Workouts.resources
+C:\Users\gabvi\Documents\Disciplinas\3ºano\2ºsemestre\BD\P\APFE_109050_108342\PocketCoach\PocketCoach\obj\Debug\net8.0-windows\PocketCoach.CreateWorkout.resources

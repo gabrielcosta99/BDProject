@@ -30,7 +30,7 @@
         {
             listBox1 = new ListBox();
             label1 = new Label();
-            button1 = new Button();
+            bttnCheckItOut = new Button();
             listBox2 = new ListBox();
             label2 = new Label();
             SuspendLayout();
@@ -55,14 +55,15 @@
             label1.Text = "Available workouts";
             label1.Click += label1_Click;
             // 
-            // button1
+            // bttnCheckItOut
             // 
-            button1.Location = new Point(359, 310);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 42);
-            button1.TabIndex = 2;
-            button1.Text = "Check it out";
-            button1.UseVisualStyleBackColor = true;
+            bttnCheckItOut.Location = new Point(359, 310);
+            bttnCheckItOut.Name = "bttnCheckItOut";
+            bttnCheckItOut.Size = new Size(91, 42);
+            bttnCheckItOut.TabIndex = 2;
+            bttnCheckItOut.Text = "Check it out!";
+            bttnCheckItOut.UseVisualStyleBackColor = true;
+            bttnCheckItOut.Click += bttnCheckItOut_Click;
             // 
             // listBox2
             // 
@@ -91,7 +92,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(listBox2);
-            Controls.Add(button1);
+            Controls.Add(bttnCheckItOut);
             Controls.Add(label1);
             Controls.Add(listBox1);
             Name = "Workouts";
@@ -105,7 +106,7 @@
 
         private ListBox listBox1;
         private Label label1;
-        private Button button1;
+        private Button bttnCheckItOut;
         private ListBox listBox2;
         private Label label2;
     }

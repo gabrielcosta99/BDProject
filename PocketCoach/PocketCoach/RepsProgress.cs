@@ -3,6 +3,7 @@
 public class RepsProgress
 {
 	private int _entry_num;
+	private int _entry_workout;
 	private int _num_ex;
 	private int _set_num;
 	private int _reps_made;
@@ -12,6 +13,11 @@ public class RepsProgress
 	public int EntryNum {
 		get { return _entry_num; }
 		set { _entry_num = value; }
+	}
+
+	public int EntryWorkout {
+		get { return _entry_workout; }
+		set { _entry_workout = value; }
 	}
 
 	public int NumEx {
@@ -36,19 +42,25 @@ public class RepsProgress
 		set { _weight_used = value; }
 	}
 
-
+	/*
     public override String ToString()
     {
         return "exercise: " + _num_ex + " set_num: " +_set_num;
+    }
+	*/
+	public override String ToString()
+    {
+        return "entry_num:"+_entry_num+" entry_workout:"+_entry_workout+" exercise: " + _num_ex + " set_num: " +_set_num+ " reps_made: " + _reps_made + " weight_used: " + _weight_used;
     }
 
     public RepsProgress() : base()
 	{
 	}
 
-	public RepsProgress(int entry_num, int num_ex, int set_num, int reps_made, int weight_used) : base()
+	public RepsProgress(int entry_num,int _entry_workout, int num_ex, int set_num, int reps_made, int weight_used) : base()
 	{
 		this._entry_num = entry_num;
+		this._entry_workout = _entry_workout;
 		this._num_ex = num_ex;
 		this._set_num = set_num;
 		this._reps_made = reps_made;

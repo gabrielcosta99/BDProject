@@ -91,21 +91,6 @@ namespace PocketCoach
                 progress.WeightUsed = int.Parse(reader["weight_used"].ToString());
                 listBox1.Items.Add(progress);
 
-                /*
-                C.CustomerID = reader["CustomerID"].ToString();
-                C.CompanyName = reader["CompanyName"].ToString();
-                C.ContactName = reader["ContactName"].ToString();
-                C.Address1 = reader["Address"].ToString();
-                C.City = reader["City"].ToString();
-                C.State = reader["Region"].ToString();
-                C.ZIP = reader["PostalCode"].ToString();
-                C.Country = reader["Country"].ToString();
-                C.Phone = reader["Phone"].ToString();
-                C.Fax = reader["Fax"].ToString();
-                listBox1.Items.Add(C);
-                */
-
-
             }
 
             cn.Close();
@@ -163,7 +148,7 @@ namespace PocketCoach
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
-           
+
             cn.Close();
         }
 
@@ -221,7 +206,7 @@ namespace PocketCoach
             bttnConfirm.Visible = true;
             bttnCancel.Visible = true;
         }
-        
+
         public void ShowButtons()
         {
             LockControls();
@@ -399,8 +384,8 @@ namespace PocketCoach
             //this.Hide();
             // Show Form2
             form2.Show();
-            
-            
+
+
         }
 
         private void bttnAdd_Click(object sender, EventArgs e)  //add button
@@ -439,7 +424,7 @@ namespace PocketCoach
 
         private void bttnDelete_Click(object sender, EventArgs e)  // delete button
         {
-            
+
 
             if (listBox1.SelectedIndex > -1)
             {
@@ -465,9 +450,12 @@ namespace PocketCoach
                     ShowRepsProgress();
                 }
             }
-            
+
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

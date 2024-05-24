@@ -60,7 +60,7 @@ namespace PocketCoach
         private static SqlConnection getprivSGBDConnection(string  dbServer, string dbName, string userName, string userPass)
         {
             //return new SqlConnection("data source= LAPTOP-5HIDEPJS\\SQLEXPRESS;integrated security=true;initial catalog=PocketCoach;");
-            return new SqlConnection("Data Source =" + dbServer + ";" + "Initial Catalog =" + dbName + "; uid = " + userName + ";" + "password = " + userPass);
+            return new SqlConnection("Data Source =" + dbServer + ";" + "Initial Catalog =" + dbName + "; uid = p7g6; password = BDgahe2003");
 
         }
 

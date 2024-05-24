@@ -29,30 +29,36 @@ INSERT INTO message VALUES (3, 2, 1, 'Hello, I would like to know more about the
 INSERT INTO message VALUES (4, 2, 0, 'Sure, what would you like to know?');
 
 
-INSERT INTO exercise_progress VALUES(1, 2, '2021-05-01');
-INSERT INTO exercise_progress VALUES(2, 2, '2021-05-02');
-INSERT INTO exercise_progress VALUES(3, 3, '2021-05-01');
-INSERT INTO exercise_progress VALUES(4, 3, '2021-01-01');
+INSERT INTO workout VALUES(1,'title','chest,legs',1,1);
+INSERT INTO workout VALUES(2,'Leg day','legs',1,2);
+
+INSERT INTO workout_exercise VALUES(1,1,1);
+INSERT INTO workout_exercise VALUES(1,2,1);
+INSERT INTO workout_exercise VALUES(1,3,1);
+INSERT INTO workout_exercise VALUES(1,1,2);
+INSERT INTO workout_exercise VALUES(1,2,2);
+INSERT INTO workout_exercise VALUES(1,3,2);
+INSERT INTO workout_exercise VALUES(2,2,1);
+INSERT INTO workout_exercise VALUES(2,3,1);
+
+
+INSERT INTO workout_progress VALUES(1, 2, '2021-05-01',1);
+INSERT INTO workout_progress VALUES(2, 2, '2021-05-02',1);
+INSERT INTO workout_progress VALUES(3, 3, '2021-05-01',2);
+INSERT INTO workout_progress VALUES(4, 3, '2021-01-01',2);
 
 INSERT INTO reps_exercise VALUES(1);
 INSERT INTO reps_exercise VALUES(2);
 INSERT INTO reps_exercise VALUES(3);
 
--- entry_num, num_ex, set_num, reps_made, weight_used
-INSERT INTO reps_progress VALUES(1, 1, 1, 10, 50);
-INSERT INTO reps_progress VALUES(2, 1, 2, 12, 50);
-INSERT INTO reps_progress VALUES(3, 1, 3, 8, 50);
+-- entry_num, entry_workout ,num_ex, set_num, reps_made, weight_used
+INSERT INTO reps_progress VALUES(1,1, 1, 1, 10, 50);
+INSERT INTO reps_progress VALUES(2,1, 1, 2, 12, 50);
+INSERT INTO reps_progress VALUES(3,1, 1, 3, 8, 50);
+INSERT INTO reps_progress VALUES(4,1, 2, 1, 10, 50);
+INSERT INTO reps_progress VALUES(5,1, 2, 2, 12, 50);
+INSERT INTO reps_progress VALUES(6,1, 2, 3, 8, 50);
 
-
-
-INSERT INTO workout VALUES(1,'title','chest,legs',1,1);
-INSERT INTO workout VALUES(2,'Leg day','legs',1,2);
-
-INSERT INTO workout_exercise VALUES(1,1);
-INSERT INTO workout_exercise VALUES(1,2);
-INSERT INTO workout_exercise VALUES(1,3);
-INSERT INTO workout_exercise VALUES(2,2);
-INSERT INTO workout_exercise VALUES(2,3);
 
 select * from athlete_weight
 select * from athlete;
@@ -61,7 +67,7 @@ select * from subscription;
 select * from exercise;
 select * from chat;
 select * from message;
-select * from exercise_progress;
+select * from workout_progress;
 select * from reps_exercise;
 select * from reps_progress;
 select * from workout;

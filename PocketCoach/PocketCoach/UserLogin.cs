@@ -12,7 +12,7 @@ namespace PocketCoach
 {
     public partial class UserLogin : Form
     {
-        public static int athleteNum;
+        public static int athlete_num;
         public static bool isPT;
         public static int PTNum;
         public UserLogin()
@@ -74,7 +74,7 @@ namespace PocketCoach
             {
                 try
                 {
-                    athleteNum = int.Parse(txtAthleteNum.Text);
+                    athlete_num = int.Parse(txtAthleteNum.Text);
                 }
                 catch
                 {

@@ -41,6 +41,17 @@ CREATE TABLE exercise(
     FOREIGN KEY (PT_num) REFERENCES personal_trainer(num_PT)
 )
 
+CREATE TABLE reps_exercise(
+    num_ex INT PRIMARY KEY,
+    FOREIGN KEY (num_ex) REFERENCES exercise(num_ex)
+);
+
+CREATE TABLE time_exercise(
+    num_ex INT PRIMARY KEY,
+    FOREIGN KEY (num_ex) REFERENCES exercise(num_ex)
+);
+
+
 CREATE TABLE chat(
     num_chat INT PRIMARY KEY,
     Athlete_num INT,
@@ -57,41 +68,7 @@ CREATE TABLE message(
     FOREIGN KEY (chat_num) REFERENCES chat(num_chat)
 );
 
-CREATE TABLE exercise_progress(
-    entry_num INT PRIMARY KEY,
-    Athlete_num INT,
-    date DATE,
-    FOREIGN KEY (Athlete_num) REFERENCES athlete(num_athlete)
-);
 
-CREATE TABLE time_exercise(
-    num_ex INT PRIMARY KEY,
-    FOREIGN KEY (num_ex) REFERENCES exercise(num_ex)
-);
-
-CREATE TABLE time_progress(
-    entry_num INT PRIMARY KEY,
-    num_ex INT,
-    set_num INT,
-    time INT,
-    FOREIGN KEY (entry_num) REFERENCES exercise_progress(entry_num),
-    FOREIGN KEY (num_ex) REFERENCES time_exercise(num_ex)
-);
-
-CREATE TABLE reps_exercise(
-    num_ex INT PRIMARY KEY,
-    FOREIGN KEY (num_ex) REFERENCES exercise(num_ex)
-);
-
-CREATE TABLE reps_progress(
-    entry_num INT PRIMARY KEY,
-    num_ex INT,
-    set_num INT,
-    reps_made INT,
-    weight_used INT,
-    FOREIGN KEY (entry_num) REFERENCES exercise_progress(entry_num),
-    FOREIGN KEY (num_ex) REFERENCES reps_exercise(num_ex)
-);
 
 CREATE TABLE workout(
     num_workout INT PRIMARY KEY,
@@ -105,11 +82,40 @@ CREATE TABLE workout(
 CREATE TABLE workout_exercise(
     num_workout INT,
     num_ex INT,
-    PRIMARY KEY (num_workout, num_ex),
+	set_num INT DEFAULT 1,
+    PRIMARY KEY (num_workout, num_ex,set_num),
     FOREIGN KEY (num_workout) REFERENCES workout(num_workout),
     FOREIGN KEY (num_ex) REFERENCES exercise(num_ex)
 );
 
 
 
+CREATE TABLE workout_progress(
+    entry_num INT PRIMARY KEY,
+    Athlete_num INT,
+    date DATE,
+	num_workout INT,
+    FOREIGN KEY (Athlete_num) REFERENCES athlete(num_athlete),
+	FOREIGN KEY (num_workout) REFERENCES workout(num_workout),
+);
+
+CREATE TABLE time_progress(
+    entry_num INT PRIMARY KEY,
+	entry_workout_prog INT,
+    num_ex INT,
+    set_num INT,
+    time INT,
+    FOREIGN KEY (entry_workout_prog) REFERENCES workout_progress(entry_num)
+);
+
+
+CREATE TABLE reps_progress(
+    entry_num INT PRIMARY KEY,
+	entry_workout_prog INT,
+    num_ex INT,
+    set_num INT,
+    reps_made INT,
+    weight_used INT,
+    FOREIGN KEY (entry_workout_prog) REFERENCES workout_progress(entry_num),
+);
 

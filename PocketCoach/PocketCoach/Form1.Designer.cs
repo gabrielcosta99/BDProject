@@ -112,6 +112,7 @@ namespace PocketCoach
             label5.Size = new Size(71, 15);
             label5.TabIndex = 10;
             label5.Text = "weight used";
+            label5.Click += label5_Click;
             // 
             // txtNumEx
             // 

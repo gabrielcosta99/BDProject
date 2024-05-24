@@ -17,6 +17,7 @@ namespace PocketCoach
     {
         private SqlConnection cn;
         private int currentWorkout;
+        public static int num_workout;
 
         public Workouts()
         {
@@ -137,8 +138,12 @@ namespace PocketCoach
 
         private void bttnCheckItOut_Click(object sender, EventArgs e)
         {
-            Form form1 = new Form1();
-            form1.Show();
+            Workout workout = new Workout();
+            workout = (Workout)listBox1.Items[currentWorkout];
+            num_workout = workout.NumWorkout;
+
+            WatchWorkout watchWorkout = new WatchWorkout();
+            watchWorkout.Show();
             this.Hide();
         }
     }

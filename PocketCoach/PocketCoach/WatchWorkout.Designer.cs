@@ -39,18 +39,16 @@
             txtWeightUsed = new TextBox();
             label5 = new Label();
             listBox1 = new ListBox();
-            bttnEdit = new Button();
-            bttnAdd = new Button();
             bttnCancel = new Button();
             bttnConfirm = new Button();
             bttnPrevExercise = new Button();
-            bttnNextSet = new Button();
+            bttnFinishWorkout = new Button();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             SuspendLayout();
             // 
             // bttnNextExercise
             // 
-            bttnNextExercise.Location = new Point(380, 334);
+            bttnNextExercise.Location = new Point(427, 272);
             bttnNextExercise.Name = "bttnNextExercise";
             bttnNextExercise.Size = new Size(113, 23);
             bttnNextExercise.TabIndex = 0;
@@ -96,7 +94,7 @@
             // 
             // bttnPlay
             // 
-            bttnPlay.Location = new Point(567, 274);
+            bttnPlay.Location = new Point(581, 244);
             bttnPlay.Margin = new Padding(3, 2, 3, 2);
             bttnPlay.Name = "bttnPlay";
             bttnPlay.Size = new Size(82, 22);
@@ -144,26 +142,6 @@
             listBox1.TabIndex = 16;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // bttnEdit
-            // 
-            bttnEdit.Location = new Point(292, 256);
-            bttnEdit.Name = "bttnEdit";
-            bttnEdit.Size = new Size(75, 23);
-            bttnEdit.TabIndex = 24;
-            bttnEdit.Text = "Edit";
-            bttnEdit.UseVisualStyleBackColor = true;
-            bttnEdit.Click += bttnEdit_Click_1;
-            // 
-            // bttnAdd
-            // 
-            bttnAdd.Location = new Point(380, 256);
-            bttnAdd.Name = "bttnAdd";
-            bttnAdd.Size = new Size(75, 23);
-            bttnAdd.TabIndex = 23;
-            bttnAdd.Text = "Add";
-            bttnAdd.UseVisualStyleBackColor = true;
-            bttnAdd.Click += bttnAdd_Click_1;
-            // 
             // bttnCancel
             // 
             bttnCancel.Location = new Point(418, 217);
@@ -186,7 +164,7 @@
             // 
             // bttnPrevExercise
             // 
-            bttnPrevExercise.Location = new Point(244, 334);
+            bttnPrevExercise.Location = new Point(291, 272);
             bttnPrevExercise.Name = "bttnPrevExercise";
             bttnPrevExercise.Size = new Size(112, 23);
             bttnPrevExercise.TabIndex = 25;
@@ -194,25 +172,23 @@
             bttnPrevExercise.UseVisualStyleBackColor = true;
             bttnPrevExercise.Click += bttnPrevExercise_Click;
             // 
-            // bttnNextSet
+            // bttnFinishWorkout
             // 
-            bttnNextSet.Location = new Point(517, 334);
-            bttnNextSet.Name = "bttnNextSet";
-            bttnNextSet.Size = new Size(75, 23);
-            bttnNextSet.TabIndex = 26;
-            bttnNextSet.Text = "Next Set";
-            bttnNextSet.UseVisualStyleBackColor = true;
-            bttnNextSet.Click += bttnNextSet_Click;
+            bttnFinishWorkout.Location = new Point(384, 379);
+            bttnFinishWorkout.Name = "bttnFinishWorkout";
+            bttnFinishWorkout.Size = new Size(99, 23);
+            bttnFinishWorkout.TabIndex = 26;
+            bttnFinishWorkout.Text = "Finish Workout";
+            bttnFinishWorkout.UseVisualStyleBackColor = true;
+            bttnFinishWorkout.Click += bttnFinishWorkout_Click;
             // 
             // WatchWorkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(bttnNextSet);
+            Controls.Add(bttnFinishWorkout);
             Controls.Add(bttnPrevExercise);
-            Controls.Add(bttnEdit);
-            Controls.Add(bttnAdd);
             Controls.Add(bttnCancel);
             Controls.Add(bttnConfirm);
             Controls.Add(bttnPlay);
@@ -245,11 +221,9 @@
         private TextBox txtWeightUsed;
         private Label label5;
         private ListBox listBox1;
-        private Button bttnEdit;
-        private Button bttnAdd;
         private Button bttnCancel;
         private Button bttnConfirm;
         private Button bttnPrevExercise;
-        private Button bttnNextSet;
+        private Button bttnFinishWorkout;
     }
 }

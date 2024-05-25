@@ -37,7 +37,6 @@ namespace PocketCoach
                 return;
 
             workout_prog_entry_num = GetMaxEntryNum("workout_progress") + 1;
-            InsertWorkoutProgress();
 
             reps_prog_entry_num = GetMaxEntryNum("reps_progress") + 1;
             time_prog_entry_num = GetMaxEntryNum("time_progress") + 1;
@@ -62,7 +61,7 @@ namespace PocketCoach
                 }
                 catch
                 {
-                    maxEntryNum = 1;
+                    maxEntryNum = 0;
                 }
             }
             reader.Close();
@@ -246,7 +245,7 @@ namespace PocketCoach
         }
 
 
-        private void SaveRepsProgress()
+        private void SaveProgress()
         {
             try
             {
@@ -263,7 +262,7 @@ namespace PocketCoach
                 }
                 else if (progress is TimeProgress timeProgress)
                 {
-                    timeProgress.Time = int.Parse(txtRepsMade.Text);
+                    timeProgress.Time = int.Parse(txtTime.Text);
                 }
 
                 listBox1.Items[currentExercise] = exerciseWithProgress;
@@ -308,8 +307,8 @@ namespace PocketCoach
 
         private void bttnConfirm_Click_1(object sender, EventArgs e)  // Confirm button
         {
-           
-            SaveRepsProgress();
+
+            SaveProgress();
             listBox1.Enabled = true;
         }
 
@@ -416,6 +415,7 @@ namespace PocketCoach
 
         private void bttnFinishWorkout_Click(object sender, EventArgs e)
         {
+            InsertWorkoutProgress();
             foreach (ExerciseWithProgress exerciseWithProgress in listBox1.Items)
             {
                 if (exerciseWithProgress.Progress is RepsProgress repsProgress)

@@ -21,7 +21,7 @@ namespace PocketCoach
         public CreateWorkout()
         {
             InitializeComponent();
-            exerciseCounts = new Dictionary<int, int>()
+            exerciseCounts = new Dictionary<int, int>();
 
         }
 

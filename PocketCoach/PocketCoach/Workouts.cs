@@ -44,13 +44,15 @@ namespace PocketCoach
         {
             if (!verifySGBDConnection())
                 return;
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM workout", cn);
+            SqlCommand cmd = new SqlCommand("SELECT w.num_workout, w.title,w.tags,w.premium,w.PT_num FROM athlete join subscription on athlete.num_athlete=subscription.num_athlete join workout as w on subscription.num_PT=w.PT_num WHERE athlete.num_athlete=@num_athlete;", cn);
+            cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
+            
             SqlDataReader reader = cmd.ExecuteReader();
             listBox1.Items.Clear();
 
             while (reader.Read())
             {
+                
                 Workout workout = new Workout();
                 workout.NumWorkout = int.Parse(reader["num_workout"].ToString());
                 workout.Title = reader["title"].ToString();

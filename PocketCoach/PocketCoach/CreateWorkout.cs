@@ -8,8 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Data.SqlClient;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PocketCoach
 {
@@ -18,10 +16,12 @@ namespace PocketCoach
 
         private SqlConnection cn;
         private bool isPremium = false;
+        private Dictionary<int, int> exerciseCounts;
 
         public CreateWorkout()
         {
             InitializeComponent();
+            exerciseCounts = new Dictionary<int, int>();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -108,6 +108,7 @@ namespace PocketCoach
 
         private void button1_Click(object sender, EventArgs e)  // Button "add"
         {
+            
             listBox2.Items.Add(listBox1.SelectedItem);
         }
 
@@ -144,7 +145,7 @@ namespace PocketCoach
                 return;
             //Workout workout = new Workout();
             cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO workout(num_workout, title, tags,premium,PT_num) " + "VALUES (@num_workout, @title, @tags,@PT_num)";
+            cmd.CommandText = "INSERT INTO workout(num_workout, title, tags,premium,PT_num) " + "VALUES (@num_workout, @title, @tags,@premium,@PT_num)";
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@num_workout", num_workout);
             cmd.Parameters.AddWithValue("@title", txtTitle.Text);
@@ -165,11 +166,21 @@ namespace PocketCoach
 
             for(int i = 0; i < listBox2.Items.Count; i++)
             {
+                
                 Exercise exercise = (Exercise)listBox2.Items[i];
-                cmd.CommandText = "INSERT INTO workout_exercise " + "VALUES (@num_workout, @num_exercise)";
+                if (exerciseCounts.ContainsKey(exercise.NumEx))
+                {
+                    exerciseCounts[exercise.NumEx]++;
+                }
+                else
+                {
+                    exerciseCounts[exercise.NumEx] = 1;
+                }
+                cmd.CommandText = "INSERT INTO workout_exercise " + "VALUES (@num_workout, @num_exercise,@set_num)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@num_workout", num_workout);
                 cmd.Parameters.AddWithValue("@num_exercise", exercise.NumEx);
+                cmd.Parameters.AddWithValue("@set_num", exerciseCounts[exercise.NumEx]);
                 try
                 {
                     cmd.ExecuteNonQuery();

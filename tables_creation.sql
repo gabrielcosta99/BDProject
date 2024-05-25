@@ -105,7 +105,8 @@ CREATE TABLE time_progress(
     num_ex INT,
     set_num INT,
     time INT,
-    FOREIGN KEY (entry_workout_prog) REFERENCES workout_progress(entry_num)
+    FOREIGN KEY (entry_workout_prog) REFERENCES workout_progress(entry_num),
+	FOREIGN KEY (num_ex) REFERENCES time_exercise(num_ex),
 );
 
 
@@ -117,5 +118,5 @@ CREATE TABLE reps_progress(
     reps_made INT,
     weight_used INT,
     FOREIGN KEY (entry_workout_prog) REFERENCES workout_progress(entry_num),
+	FOREIGN KEY (num_ex) REFERENCES reps_exercise(num_ex),
 );
-

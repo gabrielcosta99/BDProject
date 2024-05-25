@@ -18,6 +18,8 @@ INSERT INTO subscription VALUES (3, 2);
 INSERT INTO exercise VALUES (1, '../../../../../videos/uatreino1.mp4', 'Bench Press', 'The bench press is an upper-body weight training exercise in which the trainee presses a weight upwards while lying on a weight training bench.', 'Chest, Triceps, Shoulders', '2021-05-01', 1, '../../imgs/ex1.jpg');
 INSERT INTO exercise VALUES (2, '../../../../../videos/uatreino2.mp4', 'Squat', 'The squat is a lower body exercise that works several muscle groups. It is a versatile exercise that can be done in many different ways.', 'Quadriceps, Hamstrings, Glutes', '2021-05-01', 2, '../../imgs/ex2.jpg');
 INSERT INTO exercise VALUES (3, '../../../../../videos/uatreino3.mp4', 'Deadlift', 'The deadlift is a weight training exercise in which a loaded barbell or bar is lifted off the ground to the level of the hips, then lowered to the ground.', 'Lower back, Glutes, Hamstrings', '2021-05-01', 3, '../../imgs/ex3.jpg')
+INSERT INTO exercise VALUES (4, '../../../../../videos/uatreino3.mp4', 'Plank', 'The plank is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.', 'Core', '2021-05-01', 1, '../../imgs/ex4.jpg');
+INSERT INTO exercise VALUES (5, '../../../../../videos/uatreino3.mp4', 'Running', 'Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot.', 'Cardio', '2021-05-01', 1, '../../imgs/ex5.jpg');
 
 INSERT INTO chat VALUES (1, 1, 1);
 INSERT INTO chat VALUES (2, 2, 3);
@@ -50,6 +52,9 @@ INSERT INTO workout_progress VALUES(4, 3, '2021-01-01',2);
 INSERT INTO reps_exercise VALUES(1);
 INSERT INTO reps_exercise VALUES(2);
 INSERT INTO reps_exercise VALUES(3);
+
+INSERT INTO time_exercise VALUES(4);
+INSERT INTO time_exercise VALUES(5);
 
 -- entry_num, entry_workout ,num_ex, set_num, reps_made, weight_used
 INSERT INTO reps_progress VALUES(1,1, 1, 1, 10, 50);

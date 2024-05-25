@@ -11,6 +11,7 @@ public class Exercise
 	//private int _premium;
 	private int _PT_num;
 	private string _thumbnail;
+	private int _is_time;
 
 	public int NumEx
 	{
@@ -67,6 +68,12 @@ public class Exercise
 		set { _thumbnail = value; }	
 	}
 
+	public int IsTime
+	{
+		get { return _is_time; }
+		set { _is_time = value; }
+	}
+
 
 	public override String ToString()
 	{
@@ -79,7 +86,7 @@ public class Exercise
 	}
 
 
-    public Exercise(int num_ex, string path, string name, string description, string muscletargets, string releasedate, int PT_num, string thumbnail) : base()
+    public Exercise(int num_ex, string path, string name, string description, string muscletargets, string releasedate, int PT_num, string thumbnail, int is_time) : base()
 	{
 		this._num_ex = num_ex;
 		this._path = path;
@@ -90,5 +97,6 @@ public class Exercise
 		//this._premium = premium;
 		this._PT_num = PT_num;
 		this._thumbnail = thumbnail;
+		this._is_time = is_time;
 	}
 }

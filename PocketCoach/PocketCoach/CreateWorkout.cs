@@ -21,13 +21,15 @@ namespace PocketCoach
         public CreateWorkout()
         {
             InitializeComponent();
-            exerciseCounts = new Dictionary<int, int>();
+            exerciseCounts = new Dictionary<int, int>()
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             cn = DBLogin.getSGBDConnection();
             loadExerciseToolStripMenuItem_Click(sender, e);
+
         }
 
         /*
@@ -130,7 +132,6 @@ namespace PocketCoach
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * FROM workout WHERE num_workout=(SELECT MAX(num_workout) FROM workout);";
             cmd.Connection = cn;
-
             SqlDataReader reader = cmd.ExecuteReader();
             int num_workout = 1;
             if (reader.Read())

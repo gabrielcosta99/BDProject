@@ -32,17 +32,19 @@
             bttnNextExercise = new Button();
             label1 = new Label();
             txtSetNum = new TextBox();
-            label2 = new Label();
+            reps_label = new Label();
             txtRepsMade = new TextBox();
             bttnPlay = new Button();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             txtWeightUsed = new TextBox();
-            label5 = new Label();
+            weight_label = new Label();
             listBox1 = new ListBox();
             bttnCancel = new Button();
             bttnConfirm = new Button();
             bttnPrevExercise = new Button();
             bttnFinishWorkout = new Button();
+            time_label = new Label();
+            txtTime = new TextBox();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             SuspendLayout();
             // 
@@ -74,15 +76,15 @@
             txtSetNum.TabIndex = 3;
             txtSetNum.TextChanged += txtSetNum_TextChanged;
             // 
-            // label2
+            // reps_label
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(292, 143);
-            label2.Name = "label2";
-            label2.Size = new Size(88, 15);
-            label2.TabIndex = 6;
-            label2.Text = "number of reps";
-            label2.Click += label2_Click;
+            reps_label.AutoSize = true;
+            reps_label.Location = new Point(292, 143);
+            reps_label.Name = "reps_label";
+            reps_label.Size = new Size(88, 15);
+            reps_label.TabIndex = 6;
+            reps_label.Text = "number of reps";
+            reps_label.Click += label2_Click;
             // 
             // txtRepsMade
             // 
@@ -122,15 +124,15 @@
             txtWeightUsed.TabIndex = 18;
             txtWeightUsed.TextChanged += txtWeightUsed_TextChanged;
             // 
-            // label5
+            // weight_label
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(307, 187);
-            label5.Name = "label5";
-            label5.Size = new Size(71, 15);
-            label5.TabIndex = 17;
-            label5.Text = "weight used";
-            label5.Click += label5_Click;
+            weight_label.AutoSize = true;
+            weight_label.Location = new Point(307, 187);
+            weight_label.Name = "weight_label";
+            weight_label.Size = new Size(71, 15);
+            weight_label.TabIndex = 17;
+            weight_label.Text = "weight used";
+            weight_label.Click += label5_Click;
             // 
             // listBox1
             // 
@@ -182,11 +184,31 @@
             bttnFinishWorkout.UseVisualStyleBackColor = true;
             bttnFinishWorkout.Click += bttnFinishWorkout_Click;
             // 
+            // time_label
+            // 
+            time_label.AutoSize = true;
+            time_label.Location = new Point(328, 147);
+            time_label.Name = "time_label";
+            time_label.Size = new Size(31, 15);
+            time_label.TabIndex = 27;
+            time_label.Text = "time";
+            time_label.Click += label3_Click;
+            // 
+            // txtTime
+            // 
+            txtTime.Location = new Point(393, 144);
+            txtTime.Name = "txtTime";
+            txtTime.Size = new Size(100, 23);
+            txtTime.TabIndex = 28;
+            txtTime.TextChanged += txtTime_TextChanged;
+            // 
             // WatchWorkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtTime);
+            Controls.Add(time_label);
             Controls.Add(bttnFinishWorkout);
             Controls.Add(bttnPrevExercise);
             Controls.Add(bttnCancel);
@@ -194,9 +216,9 @@
             Controls.Add(bttnPlay);
             Controls.Add(axWindowsMediaPlayer1);
             Controls.Add(txtWeightUsed);
-            Controls.Add(label5);
+            Controls.Add(weight_label);
             Controls.Add(listBox1);
-            Controls.Add(label2);
+            Controls.Add(reps_label);
             Controls.Add(txtRepsMade);
             Controls.Add(label1);
             Controls.Add(txtSetNum);
@@ -214,16 +236,18 @@
         private Button bttnNextExercise;
         private Label label1;
         private TextBox txtSetNum;
-        private Label label2;
+        private Label reps_label;
         private TextBox txtRepsMade;
         private Button bttnPlay;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private TextBox txtWeightUsed;
-        private Label label5;
+        private Label weight_label;
         private ListBox listBox1;
         private Button bttnCancel;
         private Button bttnConfirm;
         private Button bttnPrevExercise;
         private Button bttnFinishWorkout;
+        private Label time_label;
+        private TextBox txtTime;
     }
 }

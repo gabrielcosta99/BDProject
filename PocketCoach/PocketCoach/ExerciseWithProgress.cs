@@ -3,7 +3,7 @@
 public class ExerciseWithProgress
 {
     private Exercise _exercise;
-    private RepsProgress _progress;
+    public IProgress _progress;
     
     public Exercise Exercise
     {
@@ -11,7 +11,7 @@ public class ExerciseWithProgress
         set { _exercise = value; }
     }
 
-    public RepsProgress Progress { 
+    public IProgress Progress { 
         get { return _progress; } 
         set { _progress = value; }
     }
@@ -20,7 +20,7 @@ public class ExerciseWithProgress
     {
 
     }
-    public ExerciseWithProgress(Exercise exercise, RepsProgress progress)
+    public ExerciseWithProgress(Exercise exercise, IProgress progress)
     {
         _exercise = exercise;
         _progress = progress;

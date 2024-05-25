@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class RepsProgress
+public class RepsProgress : IProgress
 {
 	private int _entry_num;
 	private int _entry_workout;

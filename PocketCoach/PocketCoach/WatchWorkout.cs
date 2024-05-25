@@ -20,10 +20,13 @@ namespace PocketCoach
         //private string videopath;
         private int workout_prog_entry_num = 1;
         private int reps_prog_entry_num = 1;
+        private int time_prog_entry_num = 1;
 
         public WatchWorkout()
         {
             InitializeComponent();
+            time_label.Visible = false;
+            txtTime.Visible = false;
         }
 
         private void WatchWorkout_Load(object sender, EventArgs e)
@@ -37,6 +40,7 @@ namespace PocketCoach
             InsertWorkoutProgress();
 
             reps_prog_entry_num = GetMaxEntryNum("reps_progress") + 1;
+            time_prog_entry_num = GetMaxEntryNum("time_progress") + 1;
 
             loadWorkoutExercisesToolStripMenuItem_Click(sender, e);
         }
@@ -52,7 +56,14 @@ namespace PocketCoach
 
             if (reader.Read())
             {
-                maxEntryNum = int.Parse(reader["max_entry_num"].ToString());
+                try
+                {
+                    maxEntryNum = int.Parse(reader["max_entry_num"].ToString());
+                }
+                catch
+                {
+                    maxEntryNum = 1;
+                }
             }
             reader.Close();
             cn.Close();
@@ -108,91 +119,99 @@ namespace PocketCoach
                 exercise.Description = reader["description"].ToString();
                 exercise.MuscleTargets = reader["muscletargets"].ToString();
                 exercise.ReleaseDate = reader["releasedate"].ToString();
-
-                RepsProgress progress = new RepsProgress();
-                progress.EntryNum = reps_prog_entry_num;
-                progress.EntryWorkout = workout_prog_entry_num;
-                progress.NumEx = exercise.NumEx;
-                progress.SetNum = int.Parse(reader["set_num"].ToString());
-                progress.RepsMade = 0;
-                progress.WeightUsed = 0;
+                exercise.IsTime = int.Parse(reader["is_time"].ToString());
 
 
                 ExerciseWithProgress exerciseWithProgress = new ExerciseWithProgress();
                 exerciseWithProgress.Exercise = exercise;
-                exerciseWithProgress.Progress = progress;
+                if (exercise.IsTime == 0)
+                {
+                    RepsProgress progress = new RepsProgress();
+                    progress.EntryNum = reps_prog_entry_num++;  // increment reps_prog_entry_num for the future entries
+                    progress.EntryWorkout = workout_prog_entry_num;
+                    progress.NumEx = exercise.NumEx;
+                    progress.SetNum = int.Parse(reader["set_num"].ToString());
+                    progress.RepsMade = 0;
+                    progress.WeightUsed = 0;
+                    exerciseWithProgress.Progress = progress;
+
+
+                }
+                else
+                {
+                    TimeProgress progress = new TimeProgress()
+                    {
+                        EntryNum = time_prog_entry_num++,         // increment time_prog_entry_num for the future entries
+                        EntryWorkout = workout_prog_entry_num,
+                        NumEx = exercise.NumEx,
+                        SetNum = int.Parse(reader["set_num"].ToString()),
+                        Time = 0
+                    };
+                    exerciseWithProgress.Progress = progress;
+                }
 
                 listBox1.Items.Add(exerciseWithProgress);
-                reps_prog_entry_num++;
                 // Insert query for each exercise
 
             }
             reader.Close();
+            /*
             foreach (ExerciseWithProgress exerciseWithProgress in listBox1.Items)
             {
                 RepsProgress progress = exerciseWithProgress.Progress;
                 SubmitRepsProgress(progress);
             }
+            */
             cn.Close();
-
-
-
-
             txtSetNum.ReadOnly = true;
             currentExercise = 0;
 
         }
-        private void SubmitRepsProgress(RepsProgress progress)
-        {
-            if (!verifySGBDConnection())
-                return;
-            SqlCommand cmd = new SqlCommand();
-
-            cmd.CommandText = "INSERT INTO reps_progress VALUES (@entry_num,@entry_workout, @num_ex, @set_num, @reps_made, @weight_used) ";
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@entry_num", progress.EntryNum);
-            cmd.Parameters.AddWithValue("@entry_workout", progress.EntryWorkout);
-            cmd.Parameters.AddWithValue("@num_ex", progress.NumEx);
-            cmd.Parameters.AddWithValue("@set_num", progress.SetNum);
-            cmd.Parameters.AddWithValue("@reps_made", progress.RepsMade);
-            cmd.Parameters.AddWithValue("@weight_used", progress.WeightUsed);
-            cmd.Connection = cn;
-
-            try
-            {
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Failed to update progress in database. \n ERROR MESSAGE: \n" + ex.Message);
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
+       
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex >= 0)
             {
                 currentExercise = listBox1.SelectedIndex;
-                ShowRepsProgress();
+                ShowProgress();
             }
         }
 
-        public void ShowRepsProgress()
+        public void ShowProgress()
         {
             if (listBox1.Items.Count == 0 | currentExercise < 0)
                 return;
             ExerciseWithProgress exerciseWithProgress = (ExerciseWithProgress)listBox1.Items[currentExercise];
             Exercise exercise = exerciseWithProgress.Exercise;
-            RepsProgress progress = exerciseWithProgress.Progress;
+            IProgress progress = exerciseWithProgress.Progress;
 
             txtSetNum.Text = progress.SetNum.ToString();
-            txtRepsMade.Text = progress.RepsMade.ToString();
-            txtWeightUsed.Text = progress.WeightUsed.ToString();
 
+            if (progress is RepsProgress repsProgress)
+            {
+                txtRepsMade.Visible = true;
+                reps_label.Visible = true;
+                txtWeightUsed.Visible = true;
+                weight_label.Visible = true;
+                txtTime.Visible = false;
+                time_label.Visible = false;
+
+                txtRepsMade.Text = repsProgress.RepsMade.ToString();
+                txtWeightUsed.Text = repsProgress.WeightUsed.ToString();
+            }
+            else if (progress is TimeProgress timeProgress)
+            {
+                txtTime.Visible = true;
+                time_label.Visible = true;
+                txtRepsMade.Visible = false;
+                reps_label.Visible = false;
+                txtWeightUsed.Visible = false;
+                weight_label.Visible= false;
+
+                txtTime.Text = timeProgress.Time.ToString();
+                
+            }
 
             /*
 
@@ -223,18 +242,44 @@ namespace PocketCoach
         {
             txtRepsMade.Text = "0";
             txtWeightUsed.Text = "0";
+            txtTime.Text = "0";
         }
 
 
-        private bool SaveRepsProgress()
+        private void SaveRepsProgress()
         {
+            try
+            {
+                ExerciseWithProgress exerciseWithProgress = (ExerciseWithProgress)listBox1.Items[currentExercise];
+                Exercise exercise = exerciseWithProgress.Exercise;
+                IProgress progress = exerciseWithProgress.Progress;
+
+                progress.SetNum = int.Parse(txtSetNum.Text);
+
+                if (progress is RepsProgress repsProgress)
+                {
+                    repsProgress.RepsMade = int.Parse(txtRepsMade.Text);
+                    repsProgress.WeightUsed = int.Parse(txtWeightUsed.Text);
+                }
+                else if (progress is TimeProgress timeProgress)
+                {
+                    timeProgress.Time = int.Parse(txtRepsMade.Text);
+                }
+
+                listBox1.Items[currentExercise] = exerciseWithProgress;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            /*
             RepsProgress progress = new RepsProgress();
             try
             {
                 ExerciseWithProgress exWithProgress = new ExerciseWithProgress();
                 exWithProgress = (ExerciseWithProgress)listBox1.Items[currentExercise];
                 Exercise exercise = exWithProgress.Exercise;
-                RepsProgress prog = exWithProgress.Progress;
+                RepsProgress prog = (RepsProgress)exWithProgress.Progress;
 
                 progress.EntryNum = prog.EntryNum;
                 progress.EntryWorkout = workout_prog_entry_num;
@@ -252,26 +297,19 @@ namespace PocketCoach
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
             }
 
-            return true;
+            */
         }
 
 
-       
+
 
 
         private void bttnConfirm_Click_1(object sender, EventArgs e)  // Confirm button
         {
-            try
-            {
-                SaveRepsProgress();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
+            SaveRepsProgress();
             listBox1.Enabled = true;
         }
 
@@ -323,7 +361,7 @@ namespace PocketCoach
                 currentExercise = listBox1.SelectedIndex;
                 if (currentExercise < 0)
                     currentExercise = 0;
-                ShowRepsProgress();
+                ShowProgress();
             }
             else
             {
@@ -343,15 +381,15 @@ namespace PocketCoach
             cn.Close();
         }
 
-
+        /*
         private void bttnDelete_Click(object sender, EventArgs e)  // delete button
         {
 
 
             if (listBox1.SelectedIndex > -1)
             {
-                try
-                {
+                try { 
+                
                     RemoveRepsProgress(((RepsProgress)listBox1.SelectedItem).EntryNum);
                 }
                 catch (Exception ex)
@@ -369,17 +407,29 @@ namespace PocketCoach
                 }
                 else
                 {
-                    ShowRepsProgress();
+                    ShowProgress();
                 }
             }
 
         }
+        */
+
         private void bttnFinishWorkout_Click(object sender, EventArgs e)
         {
             foreach (ExerciseWithProgress exerciseWithProgress in listBox1.Items)
             {
-                RepsProgress progress = exerciseWithProgress.Progress;
-                UpdateRepsProgress(progress);
+                if (exerciseWithProgress.Progress is RepsProgress repsProgress)
+                {
+                    SubmitRepsProgress(repsProgress);
+                    MessageBox.Show("Submited reps progress");
+                }
+                else if(exerciseWithProgress.Progress is TimeProgress timeProgress) 
+                {
+                    SubmitTimeProgress(timeProgress);
+                    MessageBox.Show("Submited time progress");
+
+                }
+
             }
 
         }
@@ -419,6 +469,103 @@ namespace PocketCoach
                 else
                     MessageBox.Show("Update NOT OK");
                 */
+                cn.Close();
+            }
+        }
+
+        private void UpdateTimeProgress(TimeProgress progress)
+        {
+            int rows = 0;
+
+            if (!verifySGBDConnection())
+                return;
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "UPDATE time_progress SET num_ex = @num_ex, set_num = @set_num, time = @time WHERE entry_num = @entry_num";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@num_ex", progress.NumEx);
+            cmd.Parameters.AddWithValue("@set_num", progress.SetNum);
+            cmd.Parameters.AddWithValue("@time", progress.Time);
+            cmd.Parameters.AddWithValue("@entry_num", progress.EntryNum);
+
+            cmd.Connection = cn;
+
+            try
+            {
+                rows = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update contact in database.\n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                /*
+                if (rows == 1)
+                    MessageBox.Show("Update OK");
+                else
+                    MessageBox.Show("Update NOT OK");
+                */
+                cn.Close();
+            }
+        }
+
+        private void SubmitRepsProgress(RepsProgress progress)
+        {
+            if (!verifySGBDConnection())
+                return;
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "INSERT INTO reps_progress VALUES (@entry_num,@entry_workout, @num_ex, @set_num, @reps_made, @weight_used) ";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@entry_num", progress.EntryNum);
+            cmd.Parameters.AddWithValue("@entry_workout", progress.EntryWorkout);
+            cmd.Parameters.AddWithValue("@num_ex", progress.NumEx);
+            cmd.Parameters.AddWithValue("@set_num", progress.SetNum);
+            cmd.Parameters.AddWithValue("@reps_made", progress.RepsMade);
+            cmd.Parameters.AddWithValue("@weight_used", progress.WeightUsed);
+            cmd.Connection = cn;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update progress in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+        private void SubmitTimeProgress(TimeProgress progress)
+        {
+            if (!verifySGBDConnection())
+                return;
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "INSERT INTO time_progress VALUES (@entry_num,@entry_workout, @num_ex, @set_num, @time) ";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@entry_num", progress.EntryNum);
+            cmd.Parameters.AddWithValue("@entry_workout", progress.EntryWorkout);
+            cmd.Parameters.AddWithValue("@num_ex", progress.NumEx);
+            cmd.Parameters.AddWithValue("@set_num", progress.SetNum);
+            cmd.Parameters.AddWithValue("@time", progress.Time);
+            cmd.Connection = cn;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to update progress in database. \n ERROR MESSAGE: \n" + ex.Message);
+            }
+            finally
+            {
                 cn.Close();
             }
         }
@@ -483,6 +630,14 @@ namespace PocketCoach
 
         }
 
-        
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

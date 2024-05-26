@@ -166,7 +166,7 @@ namespace PocketCoach
             currentExercise = 0;
 
         }
-       
+
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -206,10 +206,10 @@ namespace PocketCoach
                 txtRepsMade.Visible = false;
                 reps_label.Visible = false;
                 txtWeightUsed.Visible = false;
-                weight_label.Visible= false;
+                weight_label.Visible = false;
 
                 txtTime.Text = timeProgress.Time.ToString();
-                
+
             }
 
             /*
@@ -423,7 +423,7 @@ namespace PocketCoach
                     SubmitRepsProgress(repsProgress);
                     MessageBox.Show("Submited reps progress");
                 }
-                else if(exerciseWithProgress.Progress is TimeProgress timeProgress) 
+                else if (exerciseWithProgress.Progress is TimeProgress timeProgress)
                 {
                     SubmitTimeProgress(timeProgress);
                     MessageBox.Show("Submited time progress");
@@ -638,6 +638,13 @@ namespace PocketCoach
         private void txtTime_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bttnLogOut_Click(object sender, EventArgs e)
+        {
+            Form userLogin = new UserLogin();
+            userLogin.Show();
+            this.Hide();
         }
     }
 }

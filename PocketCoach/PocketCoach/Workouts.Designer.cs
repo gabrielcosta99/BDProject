@@ -33,6 +33,7 @@
             bttnCheckItOut = new Button();
             listBox2 = new ListBox();
             label2 = new Label();
+            bttnLogOut = new Button();
             SuspendLayout();
             // 
             // listBox1
@@ -85,11 +86,22 @@
             label2.Text = "Exercises";
             label2.Click += label2_Click;
             // 
+            // bttnLogOut
+            // 
+            bttnLogOut.Location = new Point(672, 371);
+            bttnLogOut.Name = "bttnLogOut";
+            bttnLogOut.Size = new Size(75, 23);
+            bttnLogOut.TabIndex = 5;
+            bttnLogOut.Text = "Logout";
+            bttnLogOut.UseVisualStyleBackColor = true;
+            bttnLogOut.Click += bttnLogOut_Click;
+            // 
             // Workouts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bttnLogOut);
             Controls.Add(label2);
             Controls.Add(listBox2);
             Controls.Add(bttnCheckItOut);
@@ -109,5 +121,6 @@
         private Button bttnCheckItOut;
         private ListBox listBox2;
         private Label label2;
+        private Button bttnLogOut;
     }
 }

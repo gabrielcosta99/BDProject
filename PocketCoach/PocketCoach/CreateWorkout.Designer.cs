@@ -36,12 +36,12 @@
             listBox2 = new ListBox();
             bttnAdd = new Button();
             bttnRemove = new Button();
-            comboBox1 = new ComboBox();
             label4 = new Label();
             bttnUpload = new Button();
             label5 = new Label();
             txtTags = new TextBox();
             chkIsPremium = new CheckBox();
+            bttnLogOut = new Button();
             SuspendLayout();
             // 
             // listBox1
@@ -120,15 +120,6 @@
             bttnRemove.UseVisualStyleBackColor = true;
             bttnRemove.Click += button2_Click;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(641, 141);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 8;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -174,19 +165,29 @@
             chkIsPremium.TabIndex = 13;
             chkIsPremium.Text = "is Premium";
             chkIsPremium.UseVisualStyleBackColor = true;
-            chkIsPremium.CheckedChanged += this.chkIsPremium_CheckedChanged;
+            chkIsPremium.CheckedChanged += chkIsPremium_CheckedChanged;
+            // 
+            // bttnLogOut
+            // 
+            bttnLogOut.Location = new Point(665, 405);
+            bttnLogOut.Name = "bttnLogOut";
+            bttnLogOut.Size = new Size(75, 23);
+            bttnLogOut.TabIndex = 14;
+            bttnLogOut.Text = "LogOut";
+            bttnLogOut.UseVisualStyleBackColor = true;
+            bttnLogOut.Click += bttnLogOut_Click;
             // 
             // CreateWorkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 518);
+            Controls.Add(bttnLogOut);
             Controls.Add(chkIsPremium);
             Controls.Add(txtTags);
             Controls.Add(label5);
             Controls.Add(bttnUpload);
             Controls.Add(label4);
-            Controls.Add(comboBox1);
             Controls.Add(bttnRemove);
             Controls.Add(bttnAdd);
             Controls.Add(listBox2);
@@ -212,11 +213,11 @@
         private ListBox listBox2;
         private Button bttnAdd;
         private Button bttnRemove;
-        private ComboBox comboBox1;
         private Label label4;
         private Button bttnUpload;
         private Label label5;
         private TextBox txtTags;
         private CheckBox chkIsPremium;
+        private Button bttnLogOut;
     }
 }

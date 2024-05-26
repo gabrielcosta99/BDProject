@@ -63,7 +63,8 @@ namespace PocketCoach
             if (!verifySGBDConnection())
                 return;
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM exercise", cn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM exercise where PT_num=@PT_num", cn);
+            cmd.Parameters.AddWithValue("@PT_num", UserLogin.PTNum);
             SqlDataReader reader = cmd.ExecuteReader();
             listBox1.Items.Clear();
 
@@ -80,8 +81,6 @@ namespace PocketCoach
                 exercise.PTNum = int.Parse(reader["PT_num"].ToString());
                 exercise.Thumbnail = reader["thumbnail"].ToString();
                 listBox1.Items.Add(exercise);
-                comboBox1.Items.Add(exercise);
-
 
             }
 
@@ -110,7 +109,7 @@ namespace PocketCoach
 
         private void button1_Click(object sender, EventArgs e)  // Button "add"
         {
-            
+
             listBox2.Items.Add(listBox1.SelectedItem);
         }
 
@@ -165,9 +164,9 @@ namespace PocketCoach
             }
 
 
-            for(int i = 0; i < listBox2.Items.Count; i++)
+            for (int i = 0; i < listBox2.Items.Count; i++)
             {
-                
+
                 Exercise exercise = (Exercise)listBox2.Items[i];
                 if (exerciseCounts.ContainsKey(exercise.NumEx))
                 {
@@ -190,10 +189,10 @@ namespace PocketCoach
                 {
                     throw new Exception("Failed to update contact in database. \n ERROR MESSAGE: \n" + ex.Message);
                 }
-            }  
+            }
 
             // Does this message always show even when it is not successful?
-            MessageBox.Show("Workout uploaded successfully!");      
+            MessageBox.Show("Workout uploaded successfully!");
             listBox2.Items.Clear();
             ClearFields();
 
@@ -207,9 +206,16 @@ namespace PocketCoach
         }
 
 
-        private void chkIsPremium_CheckedChanged(object sender , EventArgs e)
+        private void chkIsPremium_CheckedChanged(object sender, EventArgs e)
         {
             isPremium = !isPremium;
-        } 
+        }
+
+        private void bttnLogOut_Click(object sender, EventArgs e)
+        {
+            Form userLogin = new UserLogin();
+            userLogin.Show();
+            this.Hide();
+        }
     }
 }

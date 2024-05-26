@@ -45,6 +45,7 @@
             bttnFinishWorkout = new Button();
             time_label = new Label();
             txtTime = new TextBox();
+            bttnLogOut = new Button();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             SuspendLayout();
             // 
@@ -202,11 +203,22 @@
             txtTime.TabIndex = 28;
             txtTime.TextChanged += txtTime_TextChanged;
             // 
+            // bttnLogOut
+            // 
+            bttnLogOut.Location = new Point(687, 379);
+            bttnLogOut.Name = "bttnLogOut";
+            bttnLogOut.Size = new Size(75, 23);
+            bttnLogOut.TabIndex = 29;
+            bttnLogOut.Text = "LogOut";
+            bttnLogOut.UseVisualStyleBackColor = true;
+            bttnLogOut.Click += bttnLogOut_Click;
+            // 
             // WatchWorkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(bttnLogOut);
             Controls.Add(txtTime);
             Controls.Add(time_label);
             Controls.Add(bttnFinishWorkout);
@@ -249,5 +261,6 @@
         private Button bttnFinishWorkout;
         private Label time_label;
         private TextBox txtTime;
+        private Button bttnLogOut;
     }
 }

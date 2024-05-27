@@ -36,7 +36,7 @@ BEGIN
     DECLARE @num_ex INT;
     SELECT @num_ex = num_ex FROM exercise WHERE PT_num = @num_PT;
 
-    -- save entry from reps_progress and time_progress so we can delete exercise_progress
+    -- save entry from reps_progress and time_progress so we can delete workout_progress
     DECLARE @entry_reps INT;
     SELECT @entry_reps = entry_num FROM reps_progress WHERE num_ex = @num_ex;
     DECLARE @entry_time INT;
@@ -54,8 +54,8 @@ BEGIN
     DELETE FROM reps_progress WHERE num_ex = @num_ex;
     DELETE FROM reps_exercise WHERE num_ex = @num_ex;
     DELETE FROM time_exercise WHERE num_ex = @num_ex;
-    DELETE FROM exercise_progress WHERE entry_num = @entry_reps;
-    DELETE FROM exercise_progress WHERE entry_num = @entry_time;
+    DELETE FROM workout_progress WHERE entry_num = @entry_reps;
+    DELETE FROM workout_progress WHERE entry_num = @entry_time;
     DELETE FROM exercise WHERE PT_num = @num_PT;
 
     DELETE FROM workout WHERE PT_num = @num_PT;
@@ -80,10 +80,10 @@ BEGIN
     DELETE FROM message WHERE chat_num IN (SELECT num_chat FROM chat WHERE Athlete_num = @num_athlete);
     DELETE FROM chat WHERE Athlete_num = @num_athlete;
     
-    -- Before deleting exercise_progress, delete all related data
-    DELETE FROM time_progress WHERE entry_num IN (SELECT entry_num FROM exercise_progress WHERE Athlete_num = @num_athlete);
-    DELETE FROM reps_progress WHERE entry_num IN (SELECT entry_num FROM exercise_progress WHERE Athlete_num = @num_athlete);
-    DELETE FROM exercise_progress WHERE Athlete_num = @num_athlete;
+    -- Before deleting workout_progress, delete all related data
+    DELETE FROM time_progress WHERE entry_num IN (SELECT entry_num FROM workout_progress WHERE Athlete_num = @num_athlete);
+    DELETE FROM reps_progress WHERE entry_num IN (SELECT entry_num FROM workout_progress WHERE Athlete_num = @num_athlete);
+    DELETE FROM workout_progress WHERE Athlete_num = @num_athlete;
     
     DELETE FROM athlete WHERE num_athlete = @num_athlete;
 END

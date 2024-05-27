@@ -33,14 +33,9 @@ BEGIN
     DECLARE @num_PT INT;
     SELECT @num_PT = num_PT FROM deleted;
     
-    DECLARE @num_ex INT;
-    SELECT @num_ex = num_ex FROM exercise WHERE PT_num = @num_PT;
-
-    -- save entry from reps_progress and time_progress so we can delete workout_progress
-    DECLARE @entry_reps INT;
-    SELECT @entry_reps = entry_num FROM reps_progress WHERE num_ex = @num_ex;
-    DECLARE @entry_time INT;
-    SELECT @entry_time = entry_num FROM time_progress WHERE num_ex = @num_ex;
+    DECLARE @num_ex TABLE (num_ex INT);
+    INSERT INTO @num_ex
+    SELECT num_ex FROM exercise WHERE PT_num = @num_PT;
     
     DELETE FROM subscription WHERE num_PT = @num_PT;
 
@@ -50,12 +45,11 @@ BEGIN
     
     -- Before deleting exercise, delete all related data
     DELETE FROM workout_exercise WHERE num_workout IN (SELECT num_workout FROM workout WHERE PT_num = @num_PT);
-    DELETE FROM time_progress WHERE num_ex = @num_ex;
-    DELETE FROM reps_progress WHERE num_ex = @num_ex;
-    DELETE FROM reps_exercise WHERE num_ex = @num_ex;
-    DELETE FROM time_exercise WHERE num_ex = @num_ex;
-    DELETE FROM workout_progress WHERE entry_num = @entry_reps;
-    DELETE FROM workout_progress WHERE entry_num = @entry_time;
+    DELETE FROM time_progress WHERE num_ex IN (SELECT num_ex FROM @num_ex);
+    DELETE FROM reps_progress WHERE num_ex IN (SELECT num_ex FROM @num_ex);
+    DELETE FROM reps_exercise WHERE num_ex IN (SELECT num_ex FROM @num_ex);
+    DELETE FROM time_exercise WHERE num_ex IN (SELECT num_ex FROM @num_ex);
+    DELETE FROM workout_progress WHERE num_workout IN (SELECT num_workout FROM workout WHERE PT_num = @num_PT);
     DELETE FROM exercise WHERE PT_num = @num_PT;
 
     DELETE FROM workout WHERE PT_num = @num_PT;

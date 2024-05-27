@@ -30,18 +30,17 @@ INSERT INTO message VALUES (2, 1, 0, 'I am fine, thank you. How can I help you?'
 INSERT INTO message VALUES (3, 2, 1, 'Hello, I would like to know more about the subscription.');
 INSERT INTO message VALUES (4, 2, 0, 'Sure, what would you like to know?');
 
-
 INSERT INTO workout VALUES(1,'title','chest,legs',1,1);
 INSERT INTO workout VALUES(2,'Leg day','legs',1,2);
 
 INSERT INTO workout_exercise VALUES(1,1,1);
-INSERT INTO workout_exercise VALUES(1,2,1);
-INSERT INTO workout_exercise VALUES(1,3,1);
+INSERT INTO workout_exercise VALUES(1,4,1);
+INSERT INTO workout_exercise VALUES(1,5,1);
 INSERT INTO workout_exercise VALUES(1,1,2);
-INSERT INTO workout_exercise VALUES(1,2,2);
-INSERT INTO workout_exercise VALUES(1,3,2);
+INSERT INTO workout_exercise VALUES(1,4,2);
+INSERT INTO workout_exercise VALUES(1,5,2);
 INSERT INTO workout_exercise VALUES(2,2,1);
-INSERT INTO workout_exercise VALUES(2,3,1);
+INSERT INTO workout_exercise VALUES(2,2,2);
 
 
 INSERT INTO workout_progress VALUES(1, 2, '2021-05-01',1);
@@ -60,9 +59,9 @@ INSERT INTO time_exercise VALUES(5);
 INSERT INTO reps_progress VALUES(1,1, 1, 1, 10, 50);
 INSERT INTO reps_progress VALUES(2,1, 1, 2, 12, 50);
 INSERT INTO reps_progress VALUES(3,1, 1, 3, 8, 50);
-INSERT INTO reps_progress VALUES(4,1, 2, 1, 10, 50);
-INSERT INTO reps_progress VALUES(5,1, 2, 2, 12, 50);
-INSERT INTO reps_progress VALUES(6,1, 2, 3, 8, 50);
+INSERT INTO reps_progress VALUES(4,1, 4, 1, 10, 50);
+INSERT INTO reps_progress VALUES(5,1, 4, 2, 12, 50);
+INSERT INTO reps_progress VALUES(6,1, 4, 3, 8, 50);
 
 
 select * from athlete_weight
@@ -75,5 +74,7 @@ select * from message;
 select * from workout_progress;
 select * from reps_exercise;
 select * from reps_progress;
+select * from time_exercise;
+select * from time_progress;
 select * from workout;
 select * from workout_exercise;

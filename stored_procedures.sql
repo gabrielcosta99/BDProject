@@ -1,3 +1,5 @@
+-- SP to get all the exercises of a workout
+
 GO
 CREATE PROCEDURE GetWorkoutExercises
     @WorkoutId INT
@@ -22,6 +24,8 @@ GO
 
 -- to test the SP : EXEC GetWorkoutExercises 1;
 
+-- SP to get the progress of all exercises of a workout for an athlete
+
 GO
 CREATE PROCEDURE GetWorkoutExerciseProgressForAthlete
     @num_workout INT,
@@ -45,7 +49,7 @@ BEGIN
     INNER JOIN 
         time_exercise te ON e.num_ex = te.num_ex
     INNER JOIN 
-        workout_progress ep ON ep.Athlete_num = @num_athlete        -- está 'ep' pk tinha exercise_progress
+        workout_progress ep ON ep.Athlete_num = @num_athlete
     INNER JOIN 
         time_progress tp ON ep.entry_num = tp.entry_num AND tp.num_ex = te.num_ex
     WHERE 
@@ -68,7 +72,7 @@ BEGIN
     INNER JOIN 
         reps_exercise re ON e.num_ex = re.num_ex
     INNER JOIN 
-        workout_progress ep ON ep.Athlete_num = @num_athlete        -- está 'ep' pk tinha exercise_progress
+        workout_progress ep ON ep.Athlete_num = @num_athlete
     INNER JOIN 
         reps_progress rp ON ep.entry_num = rp.entry_num AND rp.num_ex = re.num_ex
     WHERE 

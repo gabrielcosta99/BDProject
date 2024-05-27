@@ -1,3 +1,5 @@
+-- View to display the top 3 cheapest personal trainers
+
 GO
 CREATE VIEW Top3CheapestPTs AS
 SELECT TOP 3

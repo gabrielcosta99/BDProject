@@ -82,5 +82,5 @@ BEGIN
     DELETE FROM athlete WHERE num_athlete = @num_athlete;
 END
 
--- To Delete the triggers do:
+-- To drop a Trigger, use the following command:
 -- DROP TRIGGER <trigger_name> 

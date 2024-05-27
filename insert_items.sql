@@ -9,6 +9,8 @@ INSERT INTO athlete_weight VALUES(1,78,'2022-05-14');
 INSERT INTO personal_trainer VALUES (1, 'UA1', 'Upper body expert', 'Fitness, Bodybuilding', '../../imgs/ua1.jpg', 20, 10);
 INSERT INTO personal_trainer VALUES (2, 'UA2', 'Lower body expert', 'Fitness, Bodybuilding', '../../imgs/ua2.jpg', 25, 5);
 INSERT INTO personal_trainer VALUES (3, 'UA3', 'Full body expert', 'Fitness, Bodybuilding', '../../imgs/ua3.jpg', 30, 15);
+INSERT INTO personal_trainer VALUES (4, 'UA4', 'Cardio expert', 'Fitness, Bodybuilding', '../../imgs/ua4.jpg', 15, 20);
+INSERT INTO personal_trainer VALUES (5, 'UA5', 'Nutrition expert', 'Fitness, Bodybuilding', '../../imgs/ua5.jpg', 10, 25);
 
 INSERT INTO subscription VALUES (1, 1);
 INSERT INTO subscription VALUES (1, 2);
@@ -63,6 +65,10 @@ INSERT INTO reps_progress VALUES(4,1, 4, 1, 10, 50);
 INSERT INTO reps_progress VALUES(5,1, 4, 2, 12, 50);
 INSERT INTO reps_progress VALUES(6,1, 4, 3, 8, 50);
 
+INSERT INTO time_progress VALUES(7,1, 5, 1, 60);
+INSERT INTO time_progress VALUES(8,1, 5, 2, 60);
+INSERT INTO time_progress VALUES(9,1, 5, 3, 60);
+INSERT INTO time_progress VALUES(10,1, 5, 4, 120);
 
 select * from athlete_weight
 select * from athlete;

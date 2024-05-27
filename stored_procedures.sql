@@ -20,7 +20,7 @@ BEGIN
 END
 GO
 
--- EXEC GetWorkoutExercises 1;
+-- to test the SP : EXEC GetWorkoutExercises 1;
 
 GO
 CREATE PROCEDURE GetWorkoutExerciseProgressForAthlete
@@ -76,4 +76,9 @@ BEGIN
 END
 GO
 
--- EXEC GetWorkoutExerciseProgressForAthlete 1, 2;
+-- to test the SP : EXEC GetWorkoutExerciseProgressForAthlete 1, 2;
+
+-- To drop a SP, use the following command:
+
+-- IF Object_Id('<sp_name>', 'P') IS NOT NULL
+-- DROP PROCEDURE <sp_name>;

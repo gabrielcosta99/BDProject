@@ -131,7 +131,7 @@
             // 
             // bttnUpload
             // 
-            bttnUpload.Location = new Point(323, 405);
+            bttnUpload.Location = new Point(197, 373);
             bttnUpload.Name = "bttnUpload";
             bttnUpload.Size = new Size(122, 23);
             bttnUpload.TabIndex = 10;
@@ -169,7 +169,7 @@
             // 
             // bttnLogOut
             // 
-            bttnLogOut.Location = new Point(665, 405);
+            bttnLogOut.Location = new Point(50, 468);
             bttnLogOut.Name = "bttnLogOut";
             bttnLogOut.Size = new Size(75, 23);
             bttnLogOut.TabIndex = 14;

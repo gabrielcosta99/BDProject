@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PocketCoach")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8962c0fc36cc6f50385911e24188ea69220d3ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ebe890bcbbd8b14155e715132de2074295a82d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("PocketCoach")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PocketCoach")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

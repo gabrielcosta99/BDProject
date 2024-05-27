@@ -38,6 +38,13 @@ public class Workout
         set { _pt_num = value; }
     }
 
+
+    public override string ToString()
+    {
+        return "Workout: " + _title;
+    }
+
+
     public Workout() : base()
     {
     }

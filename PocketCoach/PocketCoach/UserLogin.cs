@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace PocketCoach
 {
     public partial class UserLogin : Form
     {
+        public static SqlConnection cn;
         public static int athlete_num;
         public static bool isPT;
         public static int PTNum;
@@ -20,11 +22,12 @@ namespace PocketCoach
             InitializeComponent();
             txtPTNum.ReadOnly = true;
 
+            
         }
 
         private void UserLogin_Load(object sender, EventArgs e)
         {
-
+            cn = getSGBDConnection();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -100,6 +103,20 @@ namespace PocketCoach
             }
         }
 
+
+        public static SqlConnection getSGBDConnection()
+        {
+            
+            SqlConnection cn = getprivSGBDConnection();
+            return cn;
+        }
+
+        private static SqlConnection getprivSGBDConnection()
+        {
+            //return new SqlConnection("data source= LAPTOP-5HIDEPJS\\SQLEXPRESS;integrated security=true;initial catalog=PocketCoach;");
+            return new SqlConnection("Data Source =tcp:mednat.ieeta.pt\\SQLSERVER,8101;Initial Catalog =p7g6; uid = p7g6; password = BDgahe2003");
+
+        }
 
 
 

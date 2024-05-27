@@ -88,7 +88,7 @@
             // 
             // bttnLogOut
             // 
-            bttnLogOut.Location = new Point(672, 371);
+            bttnLogOut.Location = new Point(231, 387);
             bttnLogOut.Name = "bttnLogOut";
             bttnLogOut.Size = new Size(75, 23);
             bttnLogOut.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(592, 430);
             Controls.Add(bttnLogOut);
             Controls.Add(label2);
             Controls.Add(listBox2);

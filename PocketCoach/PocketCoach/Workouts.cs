@@ -26,14 +26,14 @@ namespace PocketCoach
 
         private void Workouts_Load(object sender, EventArgs e)
         {
-            SqlConnection cn = DBLogin.getSGBDConnection();
+            SqlConnection cn = UserLogin.getSGBDConnection();
             loadExerciseToolStripMenuItem_Click(sender, e);
         }
 
         private bool verifySGBDConnection()
         {
             if (cn == null)
-                cn = DBLogin.getSGBDConnection();
+                cn = UserLogin.getSGBDConnection();
 
             if (cn.State != ConnectionState.Open)
                 cn.Open();
@@ -44,7 +44,7 @@ namespace PocketCoach
         {
             if (!verifySGBDConnection())
                 return;
-            SqlCommand cmd = new SqlCommand("SELECT w.num_workout, w.title,w.tags,w.premium,w.PT_num FROM athlete join subscription on athlete.num_athlete=subscription.num_athlete join workout as w on subscription.num_PT=w.PT_num WHERE athlete.num_athlete=@num_athlete;", cn);
+            SqlCommand cmd = new SqlCommand("SELECT w.num_workout, w.title,w.tags,w.premium,w.PT_num FROM athlete join subscription on athlete.num_athlete=subscription.num_athlete join workout as w on subscription.num_PT=w.PT_num WHERE athlete.num_athlete=@num_athlete or premium=0;", cn);
             cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -60,9 +60,9 @@ namespace PocketCoach
                 workout.Premium = int.Parse(reader["premium"].ToString());
                 workout.PTNum = int.Parse(reader["PT_num"].ToString());
                 listBox1.Items.Add(workout);
-
-
             }
+            reader.Close();
+
             currentWorkout = 0;
             cn.Close();
         }

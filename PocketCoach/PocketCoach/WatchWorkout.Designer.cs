@@ -46,12 +46,14 @@
             time_label = new Label();
             txtTime = new TextBox();
             bttnLogOut = new Button();
+            txtTitle = new TextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             SuspendLayout();
             // 
             // bttnNextExercise
             // 
-            bttnNextExercise.Location = new Point(427, 272);
+            bttnNextExercise.Location = new Point(418, 272);
             bttnNextExercise.Name = "bttnNextExercise";
             bttnNextExercise.Size = new Size(113, 23);
             bttnNextExercise.TabIndex = 0;
@@ -97,7 +99,7 @@
             // 
             // bttnPlay
             // 
-            bttnPlay.Location = new Point(581, 244);
+            bttnPlay.Location = new Point(617, 244);
             bttnPlay.Margin = new Padding(3, 2, 3, 2);
             bttnPlay.Name = "bttnPlay";
             bttnPlay.Size = new Size(82, 22);
@@ -205,7 +207,7 @@
             // 
             // bttnLogOut
             // 
-            bttnLogOut.Location = new Point(687, 379);
+            bttnLogOut.Location = new Point(721, 475);
             bttnLogOut.Name = "bttnLogOut";
             bttnLogOut.Size = new Size(75, 23);
             bttnLogOut.TabIndex = 29;
@@ -213,11 +215,30 @@
             bttnLogOut.UseVisualStyleBackColor = true;
             bttnLogOut.Click += bttnLogOut_Click;
             // 
+            // txtTitle
+            // 
+            txtTitle.Location = new Point(383, 12);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(100, 23);
+            txtTitle.TabIndex = 30;
+            txtTitle.TextChanged += txtTitle_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(348, 15);
+            label2.Name = "label2";
+            label2.Size = new Size(29, 15);
+            label2.TabIndex = 31;
+            label2.Text = "Title";
+            // 
             // WatchWorkout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(807, 510);
+            Controls.Add(label2);
+            Controls.Add(txtTitle);
             Controls.Add(bttnLogOut);
             Controls.Add(txtTime);
             Controls.Add(time_label);
@@ -262,5 +283,7 @@
         private Label time_label;
         private TextBox txtTime;
         private Button bttnLogOut;
+        private TextBox txtTitle;
+        private Label label2;
     }
 }

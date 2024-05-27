@@ -40,7 +40,7 @@ namespace PocketCoach
 
             reps_prog_entry_num = GetMaxEntryNum("reps_progress") + 1;
             time_prog_entry_num = GetMaxEntryNum("time_progress") + 1;
-
+            loadWorkoutInfo(sender, e);
             loadWorkoutExercisesToolStripMenuItem_Click(sender, e);
         }
         private int GetMaxEntryNum(string tableName)
@@ -98,7 +98,21 @@ namespace PocketCoach
 
 
 
+        private void loadWorkoutInfo(object sender, EventArgs e)
+        {
+            txtTitle.ReadOnly = true;
+            if (!verifySGBDConnection())
+                return;
 
+            SqlCommand cmd = new SqlCommand("SELECT * FROM workout WHERE num_workout=@num_workout", cn);
+            cmd.Parameters.AddWithValue("@num_workout", Workouts.num_workout);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                txtTitle.Text = reader["title"].ToString();
+            }
+            reader.Close();
+        }
         private void loadWorkoutExercisesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!verifySGBDConnection())
@@ -154,13 +168,7 @@ namespace PocketCoach
 
             }
             reader.Close();
-            /*
-            foreach (ExerciseWithProgress exerciseWithProgress in listBox1.Items)
-            {
-                RepsProgress progress = exerciseWithProgress.Progress;
-                SubmitRepsProgress(progress);
-            }
-            */
+
             cn.Close();
             txtSetNum.ReadOnly = true;
             currentExercise = 0;
@@ -212,25 +220,7 @@ namespace PocketCoach
 
             }
 
-            /*
 
-            if (!verifySGBDConnection())
-                return;
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM reps_progress where entry_workout_prog=@entry_workout_prog and num_ex=@num_ex and set_num=@set_num", cn);
-            cmd.Parameters.AddWithValue("@entry_workout_prog", workout_prog_entry_num);
-            cmd.Parameters.AddWithValue("@num_ex", exercise.NumEx);
-            cmd.Parameters.AddWithValue("@set_num", progress.SetNum);
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                txtRepsMade.Text = reader["reps_made"].ToString();
-                txtWeightUsed.Text = reader["weight_used"].ToString();
-            }
-            
-            reader.Close();
-            cn.Close();
-            */
         }
 
 
@@ -271,34 +261,7 @@ namespace PocketCoach
             {
                 MessageBox.Show(ex.Message);
             }
-            /*
-            RepsProgress progress = new RepsProgress();
-            try
-            {
-                ExerciseWithProgress exWithProgress = new ExerciseWithProgress();
-                exWithProgress = (ExerciseWithProgress)listBox1.Items[currentExercise];
-                Exercise exercise = exWithProgress.Exercise;
-                RepsProgress prog = (RepsProgress)exWithProgress.Progress;
 
-                progress.EntryNum = prog.EntryNum;
-                progress.EntryWorkout = workout_prog_entry_num;
-                progress.NumEx = exercise.NumEx;
-                progress.SetNum = int.Parse(txtSetNum.Text);
-                progress.RepsMade = int.Parse(txtRepsMade.Text);
-                progress.WeightUsed = int.Parse(txtWeightUsed.Text);
-
-                exWithProgress.Progress = progress;
-                listBox1.Items[currentExercise] = exWithProgress;
-                //UpdateRepsProgress(progress);
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            */
         }
 
 
@@ -380,58 +343,26 @@ namespace PocketCoach
             cn.Close();
         }
 
-        /*
-        private void bttnDelete_Click(object sender, EventArgs e)  // delete button
-        {
-
-
-            if (listBox1.SelectedIndex > -1)
-            {
-                try { 
-                
-                    RemoveRepsProgress(((RepsProgress)listBox1.SelectedItem).EntryNum);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return;
-                }
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-                if (currentExercise == listBox1.Items.Count)
-                    currentExercise = listBox1.Items.Count - 1;
-                if (currentExercise == -1)
-                {
-                    ClearFields();
-                    MessageBox.Show("There are no more contacts");
-                }
-                else
-                {
-                    ShowProgress();
-                }
-            }
-
-        }
-        */
 
         private void bttnFinishWorkout_Click(object sender, EventArgs e)
         {
             InsertWorkoutProgress();
             foreach (ExerciseWithProgress exerciseWithProgress in listBox1.Items)
             {
+
                 if (exerciseWithProgress.Progress is RepsProgress repsProgress)
                 {
                     SubmitRepsProgress(repsProgress);
-                    MessageBox.Show("Submited reps progress");
                 }
                 else if (exerciseWithProgress.Progress is TimeProgress timeProgress)
                 {
                     SubmitTimeProgress(timeProgress);
-                    MessageBox.Show("Submited time progress");
 
                 }
 
-            }
 
+            }
+            MessageBox.Show("Progress uploaded successfuly!");
         }
 
         private void UpdateRepsProgress(RepsProgress progress)
@@ -645,6 +576,16 @@ namespace PocketCoach
             Form userLogin = new UserLogin();
             userLogin.Show();
             this.Hide();
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

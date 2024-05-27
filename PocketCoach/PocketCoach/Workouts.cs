@@ -26,14 +26,14 @@ namespace PocketCoach
 
         private void Workouts_Load(object sender, EventArgs e)
         {
-            SqlConnection cn = DBLogin.getSGBDConnection();
+            SqlConnection cn = UserLogin.getSGBDConnection();
             loadExerciseToolStripMenuItem_Click(sender, e);
         }
 
         private bool verifySGBDConnection()
         {
             if (cn == null)
-                cn = DBLogin.getSGBDConnection();
+                cn = UserLogin.getSGBDConnection();
 
             if (cn.State != ConnectionState.Open)
                 cn.Open();

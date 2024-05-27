@@ -27,7 +27,7 @@ namespace PocketCoach
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            cn = DBLogin.getSGBDConnection();
+            cn = UserLogin.getSGBDConnection();
             loadExerciseToolStripMenuItem_Click(sender, e);
 
         }
@@ -43,7 +43,7 @@ namespace PocketCoach
         private bool verifySGBDConnection()
         {
             if (cn == null)
-                cn = DBLogin.getSGBDConnection();
+                cn = UserLogin.getSGBDConnection();
 
             if (cn.State != ConnectionState.Open)
                 cn.Open();

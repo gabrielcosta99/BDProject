@@ -31,7 +31,7 @@ namespace PocketCoach
 
         private void WatchWorkout_Load(object sender, EventArgs e)
         {
-            cn = DBLogin.getSGBDConnection();
+            cn = UserLogin.getSGBDConnection();
 
             if (!verifySGBDConnection())
                 return;
@@ -87,7 +87,7 @@ namespace PocketCoach
         private bool verifySGBDConnection()
         {
             if (cn == null)
-                cn = DBLogin.getSGBDConnection();
+                cn = UserLogin.getSGBDConnection();
 
             if (cn.State != ConnectionState.Open)
                 cn.Open();

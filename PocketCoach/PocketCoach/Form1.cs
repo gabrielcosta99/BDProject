@@ -25,7 +25,7 @@ namespace PocketCoach
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cn = DBLogin.getSGBDConnection();
+            cn = UserLogin.getSGBDConnection();
             loadRepsProgressToolStripMenuItem_Click(sender, e);
             ShowButtons();
         }
@@ -41,7 +41,7 @@ namespace PocketCoach
         private bool verifySGBDConnection()
         {
             if (cn == null)
-                cn = DBLogin.getSGBDConnection();
+                cn = UserLogin.getSGBDConnection();
 
             if (cn.State != ConnectionState.Open)
                 cn.Open();

@@ -106,13 +106,12 @@ namespace PocketCoach
 
         public static SqlConnection getSGBDConnection()
         {
-            string dbServer = "tcp:mednat.ieeta.pt\\SQLSERVER,8101";
-            string dbName = "p7g6";
-            SqlConnection cn = getprivSGBDConnection(dbServer, dbName);
+            
+            SqlConnection cn = getprivSGBDConnection();
             return cn;
         }
 
-        private static SqlConnection getprivSGBDConnection(string dbServer, string dbName)
+        private static SqlConnection getprivSGBDConnection()
         {
             //return new SqlConnection("data source= LAPTOP-5HIDEPJS\\SQLEXPRESS;integrated security=true;initial catalog=PocketCoach;");
             return new SqlConnection("Data Source =tcp:mednat.ieeta.pt\\SQLSERVER,8101;Initial Catalog =p7g6; uid = p7g6; password = BDgahe2003");

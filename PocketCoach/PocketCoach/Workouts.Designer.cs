@@ -34,33 +34,35 @@
             listBox2 = new ListBox();
             label2 = new Label();
             bttnLogOut = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(53, 63);
+            listBox1.Location = new Point(61, 84);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(154, 229);
+            listBox1.Size = new Size(175, 304);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(63, 42);
+            label1.Location = new Point(72, 56);
             label1.Name = "label1";
-            label1.Size = new Size(107, 15);
+            label1.Size = new Size(135, 20);
             label1.TabIndex = 1;
             label1.Text = "Available workouts";
             label1.Click += label1_Click;
             // 
             // bttnCheckItOut
             // 
-            bttnCheckItOut.Location = new Point(359, 310);
+            bttnCheckItOut.Location = new Point(410, 413);
+            bttnCheckItOut.Margin = new Padding(3, 4, 3, 4);
             bttnCheckItOut.Name = "bttnCheckItOut";
-            bttnCheckItOut.Size = new Size(91, 42);
+            bttnCheckItOut.Size = new Size(104, 56);
             bttnCheckItOut.TabIndex = 2;
             bttnCheckItOut.Text = "Check it out!";
             bttnCheckItOut.UseVisualStyleBackColor = true;
@@ -69,44 +71,57 @@
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(338, 63);
+            listBox2.Location = new Point(386, 84);
+            listBox2.Margin = new Padding(3, 4, 3, 4);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(165, 229);
+            listBox2.Size = new Size(188, 304);
             listBox2.TabIndex = 3;
             listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(339, 44);
+            label2.Location = new Point(387, 59);
             label2.Name = "label2";
-            label2.Size = new Size(54, 15);
+            label2.Size = new Size(68, 20);
             label2.TabIndex = 4;
             label2.Text = "Exercises";
             label2.Click += label2_Click;
             // 
             // bttnLogOut
             // 
-            bttnLogOut.Location = new Point(231, 387);
+            bttnLogOut.Location = new Point(264, 516);
+            bttnLogOut.Margin = new Padding(3, 4, 3, 4);
             bttnLogOut.Name = "bttnLogOut";
-            bttnLogOut.Size = new Size(75, 23);
+            bttnLogOut.Size = new Size(86, 31);
             bttnLogOut.TabIndex = 5;
             bttnLogOut.Text = "Logout";
             bttnLogOut.UseVisualStyleBackColor = true;
             bttnLogOut.Click += bttnLogOut_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(72, 427);
+            button1.Name = "button1";
+            button1.Size = new Size(158, 29);
+            button1.TabIndex = 6;
+            button1.Text = "Subscribe to PTs";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Workouts
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(592, 430);
+            ClientSize = new Size(677, 573);
+            Controls.Add(button1);
             Controls.Add(bttnLogOut);
             Controls.Add(label2);
             Controls.Add(listBox2);
             Controls.Add(bttnCheckItOut);
             Controls.Add(label1);
             Controls.Add(listBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Workouts";
             Text = "Workouts";
             Load += Workouts_Load;
@@ -122,5 +137,6 @@
         private ListBox listBox2;
         private Label label2;
         private Button bttnLogOut;
+        private Button button1;
     }
 }

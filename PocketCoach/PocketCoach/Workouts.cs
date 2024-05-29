@@ -155,5 +155,12 @@ namespace PocketCoach
             userLogin.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form subscriptions = new Subscriptions();
+            subscriptions.Show();
+            this.Hide();
+        }
     }
 }

@@ -178,6 +178,9 @@ namespace PocketCoach
             try
             {
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Subscribed Successfully!");
+                listBox2.Items.Remove(pt);
+                listBox1.Items.Add(pt.Name);
             }
             catch (Exception ex)
             {

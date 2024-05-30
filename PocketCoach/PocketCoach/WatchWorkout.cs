@@ -118,7 +118,8 @@ namespace PocketCoach
             if (!verifySGBDConnection())
                 return;
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM workout_exercise  join exercise on workout_exercise.num_ex=exercise.num_ex WHERE num_workout=@num_workout", cn);
+            SqlCommand cmd = new SqlCommand("GetWorkoutExercises", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@num_workout", Workouts.num_workout);
             SqlDataReader reader = cmd.ExecuteReader();
             listBox1.Items.Clear();

@@ -44,7 +44,8 @@ namespace PocketCoach
         {
             if (!verifySGBDConnection())
                 return;
-            SqlCommand cmd = new SqlCommand("SELECT w.num_workout, w.title,w.tags,w.premium,w.PT_num FROM athlete join subscription on athlete.num_athlete=subscription.num_athlete join workout as w on subscription.num_PT=w.PT_num WHERE athlete.num_athlete=@num_athlete or premium=0;", cn);
+            SqlCommand cmd = new SqlCommand("GetAccessibleWorkouts", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
 
             SqlDataReader reader = cmd.ExecuteReader();

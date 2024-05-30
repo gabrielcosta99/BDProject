@@ -2,26 +2,30 @@
 
 GO
 CREATE PROCEDURE GetWorkoutExercises
-    @WorkoutId INT
+    @num_workout INT
 AS
 BEGIN
-    SELECT
-        we.num_ex AS ExerciseId,
-        e.name AS ExerciseName,
-        e.description AS ExerciseDescription,
-        e.muscletargets AS MuscleTargets,
-        e.releasedate AS ReleaseDate,
-        e.path AS ExercisePath,
-        e.thumbnail AS ExerciseThumbnail
-    FROM
+    SELECT * FROM
         workout_exercise we
     JOIN
         exercise e ON we.num_ex = e.num_ex
     WHERE
-        we.num_workout = @WorkoutId
+        we.num_workout = @num_workout
 END
 GO
 
+CREATE PROCEDURE GetAccessibleWorkouts
+    @num_athlete INT
+AS
+BEGIN
+    SELECT w.num_workout, w.title,w.tags,w.premium,w.PT_num 
+	FROM athlete join subscription on athlete.num_athlete=subscription.num_athlete 
+		join workout as w on subscription.num_PT=w.PT_num 
+	WHERE athlete.num_athlete=@num_athlete or premium=0;
+
+END
+
+GO
 -- to test the SP : EXEC GetWorkoutExercises 1;
 
 -- SP to get the progress of all exercises of a workout for an athlete

@@ -52,7 +52,13 @@ public class PersonalTrainer
         set { _slots = value; }
     }
 
-    
+
+    public override string ToString()
+    {
+        return "PT: "+_name;
+    }
+
+
 
     public PersonalTrainer() : base()
     {

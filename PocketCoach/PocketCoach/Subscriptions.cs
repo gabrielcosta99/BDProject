@@ -26,7 +26,11 @@ namespace PocketCoach
             cn = UserLogin.getSGBDConnection();
             if (!verifySGBDConnection())
                 return;
-
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
+            textBox4.ReadOnly = true;
+            textBox5.ReadOnly = true;
             loadAllPTsNotSubscribed(sender, e);
             loadSubscriptionsToolStripMenuItem_Click(sender, e);
         }

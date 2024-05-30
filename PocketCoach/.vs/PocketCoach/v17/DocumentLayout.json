@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\createworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\createworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\personaltrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\personaltrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\workouts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\workouts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\userlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|c:\\users\\gabvi\\documents\\disciplinas\\3\u00BAano\\2\u00BAsemestre\\bd\\p\\apfe_109050_108342\\pocketcoach\\pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\watchworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\pocketcoach\\createworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E67D531-9E9E-4663-A239-CB49A49EA6DB}|PocketCoach\\PocketCoach.csproj|solutionrelative:pocketcoach\\createworkout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,24 +42,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PersonalTrainer.cs",
+              "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PersonalTrainer.cs",
+              "RelativeDocumentMoniker": "PocketCoach\\PersonalTrainer.cs",
+              "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\PersonalTrainer.cs",
+              "RelativeToolTip": "PocketCoach\\PersonalTrainer.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAwwCwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T10:37:15.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Subscriptions.cs",
+              "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Subscriptions.cs",
+              "RelativeDocumentMoniker": "PocketCoach\\Subscriptions.cs",
+              "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Subscriptions.cs",
+              "RelativeToolTip": "PocketCoach\\Subscriptions.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwCwAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T10:35:32.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Subscriptions.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Subscriptions.cs",
+              "RelativeDocumentMoniker": "PocketCoach\\Subscriptions.cs",
+              "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Subscriptions.cs [Design]",
+              "RelativeToolTip": "PocketCoach\\Subscriptions.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T10:35:24.717Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "WatchWorkout.cs",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\WatchWorkout.cs",
               "RelativeDocumentMoniker": "PocketCoach\\WatchWorkout.cs",
               "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\WatchWorkout.cs",
               "RelativeToolTip": "PocketCoach\\WatchWorkout.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAAAGYAAAAlAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAAAF4AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T16:42:08.597Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "CreateWorkout.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\CreateWorkout.cs",
               "RelativeDocumentMoniker": "PocketCoach\\CreateWorkout.cs",
@@ -58,37 +108,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "UserLogin.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\UserLogin.cs",
               "RelativeDocumentMoniker": "PocketCoach\\UserLogin.cs",
               "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\UserLogin.cs [Design]",
               "RelativeToolTip": "PocketCoach\\UserLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T16:40:22.808Z"
+              "WhenOpened": "2024-05-27T16:40:22.808Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "WatchWorkout.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\WatchWorkout.cs",
               "RelativeDocumentMoniker": "PocketCoach\\WatchWorkout.cs",
               "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\WatchWorkout.cs [Design]",
               "RelativeToolTip": "PocketCoach\\WatchWorkout.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T16:10:33.257Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-27T16:10:33.257Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Workouts.cs [Design]",
               "DocumentMoniker": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Workouts.cs",
               "RelativeDocumentMoniker": "PocketCoach\\Workouts.cs",
               "ToolTip": "C:\\Users\\gabvi\\Documents\\Disciplinas\\3\u00BAano\\2\u00BAsemestre\\BD\\P\\APFE_109050_108342\\PocketCoach\\PocketCoach\\Workouts.cs [Design]",
               "RelativeToolTip": "PocketCoach\\Workouts.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T18:24:03.194Z"
+              "WhenOpened": "2024-05-26T18:24:03.194Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

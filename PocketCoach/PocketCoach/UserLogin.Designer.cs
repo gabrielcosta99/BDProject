@@ -106,6 +106,7 @@
             Controls.Add(checkBox1);
             Name = "UserLogin";
             Text = "Select user";
+            Load += UserLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

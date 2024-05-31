@@ -22,7 +22,7 @@ namespace PocketCoach
             InitializeComponent();
             txtPTNum.ReadOnly = true;
 
-            
+
         }
 
         private void UserLogin_Load(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace PocketCoach
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked)
+            if (checkBox1.Checked)
             {
                 isPT = true;
                 txtAthleteNum.Text = "";
@@ -55,7 +55,7 @@ namespace PocketCoach
 
         private void txtPTNum_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void bttnSelect_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace PocketCoach
                 }
                 catch
                 {
-                    validNumber=false;
+                    validNumber = false;
                     MessageBox.Show("Enter a valid Athlete number");
                 }
             }
@@ -96,8 +96,8 @@ namespace PocketCoach
                 }
                 else
                 {
-                    Form workouts = new Workouts();
-                    workouts.Show();
+                    Form athleteMenu = new AthleteMenu();
+                    athleteMenu.Show();
                     this.Hide();
                 }
             }
@@ -106,7 +106,7 @@ namespace PocketCoach
 
         public static SqlConnection getSGBDConnection()
         {
-            
+
             SqlConnection cn = getprivSGBDConnection();
             return cn;
         }

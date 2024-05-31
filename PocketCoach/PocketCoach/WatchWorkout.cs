@@ -572,11 +572,11 @@ namespace PocketCoach
 
         }
 
-        private void bttnLogOut_Click(object sender, EventArgs e)
+        private void bttnGoBack_Click(object sender, EventArgs e)
         {
-            Form userLogin = new UserLogin();
-            userLogin.Show();
-            this.Hide();
+            Form workouts = new Workouts();
+            workouts.Show();
+            this.Close();
         }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)

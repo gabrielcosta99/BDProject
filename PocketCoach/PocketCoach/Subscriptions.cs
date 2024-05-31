@@ -190,5 +190,12 @@ namespace PocketCoach
             cn.Close();
 
         }
+
+        private void bttnGoBack_Click(object sender, EventArgs e)
+        {
+            Form menu = new AthleteMenu();
+            menu.Show();
+            this.Close();
+        }
     }
 }

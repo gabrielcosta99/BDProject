@@ -215,7 +215,7 @@ namespace PocketCoach
         {
             Form userLogin = new UserLogin();
             userLogin.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

@@ -147,21 +147,21 @@ namespace PocketCoach
 
             WatchWorkout watchWorkout = new WatchWorkout();
             watchWorkout.Show();
-            this.Hide();
+            this.Close();
         }
 
-        private void bttnLogOut_Click(object sender, EventArgs e)
+        private void bttnGoBack_Click(object sender, EventArgs e)
         {
-            Form userLogin = new UserLogin();
-            userLogin.Show();
-            this.Hide();
+            Form menu = new AthleteMenu();
+            menu.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form subscriptions = new Subscriptions();
             subscriptions.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

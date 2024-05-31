@@ -45,7 +45,7 @@
             bttnFinishWorkout = new Button();
             time_label = new Label();
             txtTime = new TextBox();
-            bttnLogOut = new Button();
+            bttnGoBack = new Button();
             txtTitle = new TextBox();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
@@ -205,15 +205,15 @@
             txtTime.TabIndex = 28;
             txtTime.TextChanged += txtTime_TextChanged;
             // 
-            // bttnLogOut
+            // bttnGoBack
             // 
-            bttnLogOut.Location = new Point(721, 475);
-            bttnLogOut.Name = "bttnLogOut";
-            bttnLogOut.Size = new Size(75, 23);
-            bttnLogOut.TabIndex = 29;
-            bttnLogOut.Text = "LogOut";
-            bttnLogOut.UseVisualStyleBackColor = true;
-            bttnLogOut.Click += bttnLogOut_Click;
+            bttnGoBack.Location = new Point(713, 460);
+            bttnGoBack.Name = "bttnGoBack";
+            bttnGoBack.Size = new Size(83, 38);
+            bttnGoBack.TabIndex = 29;
+            bttnGoBack.Text = "Go back";
+            bttnGoBack.UseVisualStyleBackColor = true;
+            bttnGoBack.Click += bttnGoBack_Click;
             // 
             // txtTitle
             // 
@@ -239,7 +239,7 @@
             ClientSize = new Size(807, 510);
             Controls.Add(label2);
             Controls.Add(txtTitle);
-            Controls.Add(bttnLogOut);
+            Controls.Add(bttnGoBack);
             Controls.Add(txtTime);
             Controls.Add(time_label);
             Controls.Add(bttnFinishWorkout);
@@ -282,7 +282,7 @@
         private Button bttnFinishWorkout;
         private Label time_label;
         private TextBox txtTime;
-        private Button bttnLogOut;
+        private Button bttnGoBack;
         private TextBox txtTitle;
         private Label label2;
     }

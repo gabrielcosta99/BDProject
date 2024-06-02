@@ -51,8 +51,9 @@ INSERT INTO workout_exercise VALUES(3,5,1);
 
 INSERT INTO workout_progress VALUES(1, 2, '2021-05-01',1);
 INSERT INTO workout_progress VALUES(2, 2, '2021-05-02',1);
-INSERT INTO workout_progress VALUES(3, 3, '2021-05-01',2);
-INSERT INTO workout_progress VALUES(4, 3, '2021-01-01',2);
+INSERT INTO workout_progress VALUES(3, 3, '2021-05-01',2); -- n tem nenhum exercise progress associado
+INSERT INTO workout_progress VALUES(4, 3, '2021-01-01',2); -- n tem nenhum exercise progress associado
+INSERT INTO workout_progress VALUES(5, 3, '2021-01-01',2); -- n tem nenhum exercise progress associado
 
 INSERT INTO reps_exercise VALUES(1);
 INSERT INTO reps_exercise VALUES(2);
@@ -65,9 +66,9 @@ INSERT INTO time_exercise VALUES(5);
 INSERT INTO reps_progress VALUES(1,1, 1, 1, 10, 50);
 INSERT INTO reps_progress VALUES(2,1, 1, 2, 12, 50);
 INSERT INTO reps_progress VALUES(3,1, 1, 3, 8, 50);
-INSERT INTO reps_progress VALUES(4,1, 4, 1, 10, 50);
-INSERT INTO reps_progress VALUES(5,1, 4, 2, 12, 50);
-INSERT INTO reps_progress VALUES(6,1, 4, 3, 8, 50);
+INSERT INTO reps_progress VALUES(4,1, 4, 1, 10, 50); 
+INSERT INTO reps_progress VALUES(5,1, 4, 2, 12, 50); 
+INSERT INTO reps_progress VALUES(6,1, 4, 3, 8, 50);  
 
 INSERT INTO time_progress VALUES(7,1, 5, 1, 60);
 INSERT INTO time_progress VALUES(8,1, 5, 2, 60);

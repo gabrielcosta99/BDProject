@@ -87,7 +87,7 @@ GO
 -- SP to get Athlete Workout Progress with repective Workout data
 
 GO
-CREATE PROCEDURE GetAthleteWorkoutProgress
+CREATE PROCEDURE GetAthleteWorkoutProgressRespData
     @num_athlete INT
 AS
 BEGIN
@@ -98,17 +98,19 @@ BEGIN
         w.title AS WorkoutTitle,
         w.tags AS WorkoutTags,
         w.premium AS WorkoutPremium,
-        w.PT_num AS WorkoutPT,
+        pt.name AS WorkoutPTName,
         wp.date AS Date
     FROM
         workout_progress wp
     INNER JOIN
         workout w ON wp.num_workout = w.num_workout
+    INNER JOIN
+        personal_trainer pt ON w.PT_num = pt.num_PT
     WHERE
         wp.Athlete_num = @num_athlete
 END
 
--- to test the SP : EXEC GetAthleteWorkoutProgress 2;
+-- to test the SP : EXEC GetAthleteWorkoutProgressRespData 2;
 
 -- To drop a SP, use the following command:
 

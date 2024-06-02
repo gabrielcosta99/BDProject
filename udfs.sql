@@ -1,5 +1,5 @@
 -- UDF - para um dado workout_progress, retorna os reps_progress e time_progress associados
-CREATE FUNCTION GetWorkoutProgressDetails(@entry_num INT)
+/*CREATE FUNCTION GetWorkoutProgressDetails(@entry_num INT)
 RETURNS TABLE
 AS
 RETURN
@@ -25,7 +25,7 @@ RETURN
         time_progress tp
     WHERE 
         tp.entry_workout_prog = @entry_num
-);
+);*/
 
 -- to test the UDF - SELECT * FROM GetWorkoutProgressDetails(1);
 

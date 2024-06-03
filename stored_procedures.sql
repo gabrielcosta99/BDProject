@@ -34,6 +34,36 @@ GO
 
 GO
 CREATE PROCEDURE GetWorkoutExerciseProgressForAthlete
+    @entry_num INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Seleciona o progresso dos exercícios de time
+    select  tp.num_ex AS ExerciseID,
+		e.name AS ExerciseName,
+        tp.set_num AS SetNumber,
+		tp.time AS Time,
+        NULL AS RepsMade,
+        NULL AS WeightUsed
+	from time_progress as tp
+		join workout_progress on workout_progress.entry_num=tp.entry_workout_prog
+		join exercise as e on tp.num_ex = e.num_ex
+	where workout_progress.entry_num = @entry_num
+
+	UNION ALL
+
+	select rp.num_ex as ExerciseID,e.name AS ExerciseName, rp.set_num,NULL as time,rp.reps_made,rp.weight_used
+	from reps_progress as rp
+		join workout_progress on workout_progress.entry_num=rp.entry_workout_prog
+		join exercise as e on rp.num_ex = e.num_ex
+	where workout_progress.entry_num = @entry_num
+
+	order by SetNumber, ExerciseID
+
+END
+/*
+CREATE PROCEDURE GetWorkoutExerciseProgressForAthlete
     @num_workout INT,
     @num_athlete INT
 AS
@@ -80,6 +110,9 @@ BEGIN
     WHERE
         wp.num_workout = @num_workout AND wp.Athlete_num = @num_athlete
 END
+
+
+*/
 GO
 
 -- to test the SP : EXEC GetWorkoutExerciseProgressForAthlete 1, 2;

@@ -49,14 +49,15 @@ namespace PocketCoach
             loadAllWorkoutsWithProgressToolStripMenuItem_Click(sender, e);
         }
 
-        private void loadWorkoutExercises(object sender, EventArgs e, int workoutProgressID)
+        private void loadWorkoutExercises(object sender, EventArgs e,int entry_num)
         {
             if (!verifySGBDConnection())
                 return;
             // arguments are workoutProgressID, num_athlete
-            SqlCommand cmd = new SqlCommand("EXEC GetWorkoutExerciseProgressForAthlete @num_workout, @num_athlete", cn);
-            cmd.Parameters.AddWithValue("@num_workout", workoutProgressID);
-            cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
+            SqlCommand cmd = new SqlCommand("EXEC GetWorkoutExerciseProgressForAthlete @num_workout", cn);
+            cmd.Parameters.AddWithValue("@num_workout", entry_num);
+            //cmd.Parameters.AddWithValue("@num_workout", workoutProgressID);
+            //cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
 
             SqlDataReader reader = cmd.ExecuteReader();
             listBox2.Items.Clear();

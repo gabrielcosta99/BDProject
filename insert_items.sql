@@ -51,9 +51,8 @@ INSERT INTO workout_exercise VALUES(3,5,1);
 
 INSERT INTO workout_progress VALUES(1, 2, '2021-05-01',1);
 INSERT INTO workout_progress VALUES(2, 2, '2021-05-02',1);
-INSERT INTO workout_progress VALUES(3, 3, '2021-05-01',2); -- n tem nenhum exercise progress associado
-INSERT INTO workout_progress VALUES(4, 3, '2021-01-01',2); -- n tem nenhum exercise progress associado
-INSERT INTO workout_progress VALUES(5, 3, '2021-01-01',2); -- n tem nenhum exercise progress associado
+INSERT INTO workout_progress VALUES(3, 3, '2021-05-01',2);
+INSERT INTO workout_progress VALUES(4, 1, '2021-05-01',3);
 
 INSERT INTO reps_exercise VALUES(1);
 INSERT INTO reps_exercise VALUES(2);
@@ -63,17 +62,31 @@ INSERT INTO time_exercise VALUES(4);
 INSERT INTO time_exercise VALUES(5);
 
 -- entry_num, entry_workout ,num_ex, set_num, reps_made, weight_used
-INSERT INTO reps_progress VALUES(1,1, 1, 1, 10, 50);
-INSERT INTO reps_progress VALUES(2,1, 1, 2, 12, 50);
-INSERT INTO reps_progress VALUES(3,1, 1, 3, 8, 50);
-INSERT INTO reps_progress VALUES(4,1, 4, 1, 10, 50); 
-INSERT INTO reps_progress VALUES(5,1, 4, 2, 12, 50); 
-INSERT INTO reps_progress VALUES(6,1, 4, 3, 8, 50);  
+--workout_prog1
+INSERT INTO reps_progress VALUES(1,1, 1, 1, 10, 30);
+INSERT INTO reps_progress VALUES(2,1, 1, 2, 12, 30);
+--workout_prog2
+INSERT INTO reps_progress VALUES(3,2, 1, 1, 13, 30);
+INSERT INTO reps_progress VALUES(4,2, 1, 2, 15, 30);
+--workout_prog3
+INSERT INTO reps_progress VALUES(5,3, 2, 1, 10, 40);
+INSERT INTO reps_progress VALUES(6,3, 2, 2, 13, 40);
 
-INSERT INTO time_progress VALUES(7,1, 5, 1, 60);
-INSERT INTO time_progress VALUES(8,1, 5, 2, 60);
-INSERT INTO time_progress VALUES(9,1, 5, 3, 60);
-INSERT INTO time_progress VALUES(10,1, 5, 4, 120);
+
+--workout_prog1
+INSERT INTO time_progress VALUES(1,1, 4, 1, 60);
+INSERT INTO time_progress VALUES(2,1, 5, 1, 60);
+INSERT INTO time_progress VALUES(3,1, 4, 2, 65);
+INSERT INTO time_progress VALUES(4,1, 5, 2, 65);
+--workout_prog2
+INSERT INTO time_progress VALUES(5,2, 4, 1, 65);
+INSERT INTO time_progress VALUES(6,2, 5, 1, 65);
+INSERT INTO time_progress VALUES(7,2, 4, 2, 70);
+INSERT INTO time_progress VALUES(8,2, 5, 2, 70);
+--workout_prog4
+INSERT INTO time_progress VALUES(9,4,4,1,35);
+INSERT INTO time_progress VALUES(10,4,5,1,35);
+
 
 select * from athlete_weight
 select * from athlete;

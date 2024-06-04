@@ -31,6 +31,7 @@
             bttnSubscriptions = new Button();
             bttnWorkouts = new Button();
             bttnLogout = new Button();
+            bttnMyProgress = new Button();
             SuspendLayout();
             // 
             // bttnSubscriptions
@@ -55,7 +56,7 @@
             // 
             // bttnLogout
             // 
-            bttnLogout.Location = new Point(112, 333);
+            bttnLogout.Location = new Point(103, 391);
             bttnLogout.Name = "bttnLogout";
             bttnLogout.Size = new Size(130, 57);
             bttnLogout.TabIndex = 2;
@@ -63,11 +64,22 @@
             bttnLogout.UseVisualStyleBackColor = true;
             bttnLogout.Click += bttnLogout_Click;
             // 
+            // bttnMyProgress
+            // 
+            bttnMyProgress.Location = new Point(81, 224);
+            bttnMyProgress.Name = "bttnMyProgress";
+            bttnMyProgress.Size = new Size(183, 67);
+            bttnMyProgress.TabIndex = 3;
+            bttnMyProgress.Text = "My progress";
+            bttnMyProgress.UseVisualStyleBackColor = true;
+            bttnMyProgress.Click += bttnMyProgress_Click;
+            // 
             // AthleteMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(348, 426);
+            ClientSize = new Size(372, 485);
+            Controls.Add(bttnMyProgress);
             Controls.Add(bttnLogout);
             Controls.Add(bttnWorkouts);
             Controls.Add(bttnSubscriptions);
@@ -82,5 +94,6 @@
         private Button bttnSubscriptions;
         private Button bttnWorkouts;
         private Button bttnLogout;
+        private Button bttnMyProgress;
     }
 }

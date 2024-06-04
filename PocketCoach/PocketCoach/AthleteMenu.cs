@@ -36,11 +36,21 @@ namespace PocketCoach
             this.Hide();
         }
 
+
+        private void bttnMyProgress_Click(object sender, EventArgs e)
+        {
+            Form progress = new AthleteWorkoutProgress();
+            progress.Show();
+            this.Hide();
+        }
+
         private void bttnLogout_Click(object sender, EventArgs e)
         {
             Form userLogin = new UserLogin();
             userLogin.Show();
             this.Hide();
         }
+
+        
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace PocketCoach
 {
@@ -20,7 +21,6 @@ namespace PocketCoach
         public UserLogin()
         {
             InitializeComponent();
-            txtPTNum.ReadOnly = true;
 
 
         }
@@ -28,79 +28,6 @@ namespace PocketCoach
         private void UserLogin_Load(object sender, EventArgs e)
         {
             cn = getSGBDConnection();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-                isPT = true;
-                txtAthleteNum.Text = "";
-                txtAthleteNum.ReadOnly = true;
-                txtPTNum.ReadOnly = false;
-            }
-            else
-            {
-                isPT = false;
-                txtPTNum.Text = "";
-                txtAthleteNum.ReadOnly = false;
-                txtPTNum.ReadOnly = true;
-            }
-        }
-
-        private void txtAthleteNum_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPTNum_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bttnSelect_Click(object sender, EventArgs e)
-        {
-            bool validNumber = true;
-            if (isPT)
-            {
-                try
-                {
-                    PTNum = int.Parse(txtPTNum.Text);
-                }
-                catch
-                {
-                    validNumber = false;
-                    MessageBox.Show("Enter a valid PT number");
-                }
-            }
-            else
-            {
-                try
-                {
-                    athlete_num = int.Parse(txtAthleteNum.Text);
-                }
-                catch
-                {
-                    validNumber = false;
-                    MessageBox.Show("Enter a valid Athlete number");
-                }
-            }
-
-            if (validNumber)
-            {
-                if (isPT)
-                {
-                    Form form2 = new CreateWorkout();
-                    form2.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    Form athleteMenu = new AthleteMenu();
-                    athleteMenu.Show();
-                    this.Hide();
-                }
-            }
         }
 
 
@@ -118,8 +45,135 @@ namespace PocketCoach
 
         }
 
+        private bool verifySGBDConnection()
+        {
+            if (cn == null)
+                cn = UserLogin.getSGBDConnection();
+
+            if (cn.State != ConnectionState.Open)
+                cn.Open();
+
+            return cn.State == ConnectionState.Open;
+        }
 
 
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+           
+            if (checkBox1.Checked)
+            {
+                isPT = true;
+            }
+            else
+            {
+                isPT = false;
+            }
+        }
+
+        private void bttnSelect_Click(object sender, EventArgs e)
+        {
+
+            if (isPT)
+            {
+                PTNum = LoginPT();
+                if(PTNum != -1)
+                {
+                    checkBox1.Checked = false;
+                    Form form2 = new CreateWorkout();
+                    form2.Show();
+                    this.Hide();
+                }
+                
+            }
+            else
+            {
+                athlete_num = LoginAthlete();
+                if(athlete_num != -1 )
+                {
+                    checkBox1.Checked = false;
+                    Form athleteMenu = new AthleteMenu();
+                    athleteMenu.Show();
+                    this.Hide();
+                }
+                
+            }
+        }
+        public int LoginPT()
+        {
+            if (!verifySGBDConnection())
+            {
+                MessageBox.Show("Unable to connect to database");
+                return -1;
+            }
+               
+            SqlCommand cmd = new SqlCommand("SELECT num_PT FROM personal_trainer WHERE name=@name and password=@password", cn);
+            cmd.Parameters.AddWithValue("@name", txtUsername.Text);
+            cmd.Parameters.AddWithValue("@password",txtPassword.Text);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+
+                PTNum = int.Parse(reader["num_PT"].ToString());
+            }
+            else
+            {
+                reader.Close();
+                MessageBox.Show("Wrong username or password");
+                return -1;
+
+            }
+            reader.Close();
+
+            cn.Close();
+            return PTNum;
+        }
+
+        public int LoginAthlete()
+        {
+            if (!verifySGBDConnection())
+            {
+                MessageBox.Show("Unable to connect to database");
+                return -1;
+            }
+            SqlCommand cmd = new SqlCommand("SELECT num_athlete FROM athlete WHERE name=@name and password=@password", cn);
+            cmd.Parameters.AddWithValue("@name", txtUsername.Text);
+            cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+
+                athlete_num = int.Parse(reader["num_athlete"].ToString());
+            }
+            else
+            {
+                reader.Close();
+                MessageBox.Show("Wrong username or password");
+                return -1;
+                
+            }
+            reader.Close();
+
+            cn.Close();
+            return athlete_num;
+        }
+
+
+
+
+        private void txtAthleteNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPTNum_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void label1_Click(object sender, EventArgs e)   // Athlete Number
         {

@@ -1,27 +1,27 @@
-INSERT INTO athlete VALUES (1, 'Gabriel Costa');
-INSERT INTO athlete VALUES (2, 'Henrique Coelho');
-INSERT INTO athlete VALUES (3, 'Daniel Emidio');
+INSERT INTO athlete VALUES (1, 'Gabriel Costa','123');
+INSERT INTO athlete VALUES (2, 'Henrique Coelho','123');
+INSERT INTO athlete VALUES (3, 'Daniel Emidio','123');
 
 INSERT INTO athlete_weight VALUES(1,76,'2020-01-20');
 INSERT INTO athlete_weight VALUES(1,80,'2021-01-01');
 INSERT INTO athlete_weight VALUES(1,78,'2022-05-14');
 
-INSERT INTO personal_trainer VALUES (1, 'UA1', 'Upper body expert', 'Fitness, Bodybuilding', '../../imgs/ua1.jpg', 20, 10);
-INSERT INTO personal_trainer VALUES (2, 'UA2', 'Lower body expert', 'Fitness, Bodybuilding', '../../imgs/ua2.jpg', 25, 5);
-INSERT INTO personal_trainer VALUES (3, 'UA3', 'Full body expert', 'Fitness, Bodybuilding', '../../imgs/ua3.jpg', 30, 15);
-INSERT INTO personal_trainer VALUES (4, 'UA4', 'Cardio expert', 'Fitness, Bodybuilding', '../../imgs/ua4.jpg', 15, 20);
-INSERT INTO personal_trainer VALUES (5, 'UA5', 'Nutrition expert', 'Fitness, Bodybuilding', '../../imgs/ua5.jpg', 10, 25);
+INSERT INTO personal_trainer VALUES (1, 'UA1','123', 'Upper body expert', 'Fitness, Bodybuilding', '../../imgs/ua1.jpg', 20, 10);
+INSERT INTO personal_trainer VALUES (2, 'UA2','123', 'Lower body expert', 'Fitness, Bodybuilding', '../../imgs/ua2.jpg', 25, 5);
+INSERT INTO personal_trainer VALUES (3, 'UA3','123', 'Full body expert', 'Fitness, Bodybuilding', '../../imgs/ua3.jpg', 30, 15);
+INSERT INTO personal_trainer VALUES (4, 'UA4','123', 'Cardio expert', 'Fitness, Bodybuilding', '../../imgs/ua4.jpg', 15, 20);
+INSERT INTO personal_trainer VALUES (5, 'UA5','123', 'Nutrition expert', 'Fitness, Bodybuilding', '../../imgs/ua5.jpg', 10, 25);
 
 INSERT INTO subscription VALUES (1, 1);
 INSERT INTO subscription VALUES (1, 2);
 INSERT INTO subscription VALUES (2, 3);
 INSERT INTO subscription VALUES (3, 2);
 
-INSERT INTO exercise VALUES (1, '../../../../../videos/uatreino1.mp4', 'Bench Press', 'The bench press is an upper-body weight training exercise in which the trainee presses a weight upwards while lying on a weight training bench.', 'Chest, Triceps, Shoulders', '2021-05-01', 1, '../../imgs/ex1.jpg');
-INSERT INTO exercise VALUES (2, '../../../../../videos/uatreino2.mp4', 'Squat', 'The squat is a lower body exercise that works several muscle groups. It is a versatile exercise that can be done in many different ways.', 'Quadriceps, Hamstrings, Glutes', '2021-05-01', 2, '../../imgs/ex2.jpg');
-INSERT INTO exercise VALUES (3, '../../../../../videos/uatreino3.mp4', 'Deadlift', 'The deadlift is a weight training exercise in which a loaded barbell or bar is lifted off the ground to the level of the hips, then lowered to the ground.', 'Lower back, Glutes, Hamstrings', '2021-05-01', 3, '../../imgs/ex3.jpg')
-INSERT INTO exercise VALUES (4, '../../../../../videos/uatreino3.mp4', 'Plank', 'The plank is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.', 'Core', '2021-05-01', 1, '../../imgs/ex4.jpg');
-INSERT INTO exercise VALUES (5, '../../../../../videos/uatreino3.mp4', 'Running', 'Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot.', 'Cardio', '2021-05-01', 1, '../../imgs/ex5.jpg');
+INSERT INTO exercise VALUES (1, '../../../../../videos/uatreino1.mp4', 'Bench Press', 'The bench press is an upper-body weight training exercise in which the trainee presses a weight upwards while lying on a weight training bench.', 'Chest, Triceps, Shoulders', '2021-05-01', 1, '../../imgs/ex1.jpg',0);
+INSERT INTO exercise VALUES (2, '../../../../../videos/uatreino2.mp4', 'Squat', 'The squat is a lower body exercise that works several muscle groups. It is a versatile exercise that can be done in many different ways.', 'Quadriceps, Hamstrings, Glutes', '2021-05-01', 2, '../../imgs/ex2.jpg',0);
+INSERT INTO exercise VALUES (3, '../../../../../videos/uatreino3.mp4', 'Deadlift', 'The deadlift is a weight training exercise in which a loaded barbell or bar is lifted off the ground to the level of the hips, then lowered to the ground.', 'Lower back, Glutes, Hamstrings', '2021-05-01', 3, '../../imgs/ex3.jpg',0)
+INSERT INTO exercise VALUES (4, '../../../../../videos/uatreino3.mp4', 'Plank', 'The plank is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.', 'Core', '2021-05-01', 1, '../../imgs/ex4.jpg',1);
+INSERT INTO exercise VALUES (5, '../../../../../videos/uatreino3.mp4', 'Running', 'Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot.', 'Cardio', '2021-05-01', 1, '../../imgs/ex5.jpg',1);
 
 INSERT INTO chat VALUES (1, 1, 1);
 INSERT INTO chat VALUES (2, 2, 3);

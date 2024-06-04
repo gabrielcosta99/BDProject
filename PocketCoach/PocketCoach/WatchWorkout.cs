@@ -16,8 +16,6 @@ namespace PocketCoach
     {
         private SqlConnection cn;
         private int currentExercise;
-        //private bool adding;
-        //private string videopath;
         private int workout_prog_entry_num = 1;
         private int reps_prog_entry_num = 1;
         private int time_prog_entry_num = 1;
@@ -364,6 +362,9 @@ namespace PocketCoach
 
             }
             MessageBox.Show("Progress uploaded successfuly!");
+            Form menu = new AthleteMenu();
+            menu.Show();
+            this.Close();
         }
 
         private void UpdateRepsProgress(RepsProgress progress)
@@ -501,6 +502,14 @@ namespace PocketCoach
                 cn.Close();
             }
         }
+
+        private void bttnGoBack_Click(object sender, EventArgs e)
+        {
+            Form workouts = new Workouts();
+            workouts.Show();
+            this.Close();
+        }
+
         public void txtSetNum_TextChanged(object sender, EventArgs e)
         {
 
@@ -572,12 +581,6 @@ namespace PocketCoach
 
         }
 
-        private void bttnGoBack_Click(object sender, EventArgs e)
-        {
-            Form workouts = new Workouts();
-            workouts.Show();
-            this.Close();
-        }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)
         {

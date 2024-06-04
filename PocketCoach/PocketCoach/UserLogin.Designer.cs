@@ -31,15 +31,15 @@
             checkBox1 = new CheckBox();
             label1 = new Label();
             label2 = new Label();
-            txtAthleteNum = new TextBox();
-            txtPTNum = new TextBox();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
             bttnSelect = new Button();
             SuspendLayout();
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(338, 126);
+            checkBox1.Location = new Point(121, 158);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(120, 19);
             checkBox1.TabIndex = 0;
@@ -50,42 +50,42 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(69, 94);
+            label1.Location = new Point(59, 74);
             label1.Name = "label1";
-            label1.Size = new Size(90, 15);
+            label1.Size = new Size(60, 15);
             label1.TabIndex = 1;
-            label1.Text = "Athlete number";
+            label1.Text = "Username";
             label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(93, 161);
+            label2.Location = new Point(59, 118);
             label2.Name = "label2";
-            label2.Size = new Size(65, 15);
+            label2.Size = new Size(57, 15);
             label2.TabIndex = 2;
-            label2.Text = "PT number";
+            label2.Text = "Password";
             label2.Click += label2_Click;
             // 
-            // txtAthleteNum
+            // txtUsername
             // 
-            txtAthleteNum.Location = new Point(180, 91);
-            txtAthleteNum.Name = "txtAthleteNum";
-            txtAthleteNum.Size = new Size(100, 23);
-            txtAthleteNum.TabIndex = 4;
-            txtAthleteNum.TextChanged += txtAthleteNum_TextChanged;
+            txtUsername.Location = new Point(141, 71);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(100, 23);
+            txtUsername.TabIndex = 4;
+            txtUsername.TextChanged += txtAthleteNum_TextChanged;
             // 
-            // txtPTNum
+            // txtPassword
             // 
-            txtPTNum.Location = new Point(177, 160);
-            txtPTNum.Name = "txtPTNum";
-            txtPTNum.Size = new Size(100, 23);
-            txtPTNum.TabIndex = 5;
-            txtPTNum.TextChanged += txtPTNum_TextChanged;
+            txtPassword.Location = new Point(141, 115);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(100, 23);
+            txtPassword.TabIndex = 5;
+            txtPassword.TextChanged += txtPTNum_TextChanged;
             // 
             // bttnSelect
             // 
-            bttnSelect.Location = new Point(162, 222);
+            bttnSelect.Location = new Point(141, 201);
             bttnSelect.Name = "bttnSelect";
             bttnSelect.Size = new Size(75, 23);
             bttnSelect.TabIndex = 6;
@@ -97,10 +97,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(571, 280);
+            ClientSize = new Size(351, 287);
             Controls.Add(bttnSelect);
-            Controls.Add(txtPTNum);
-            Controls.Add(txtAthleteNum);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(checkBox1);
@@ -117,8 +117,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox txtAthleteNum;
-        private TextBox txtPTNum;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
         private TextBox textBox3;
         private Button bttnSelect;
     }

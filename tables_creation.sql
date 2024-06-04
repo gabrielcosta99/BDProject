@@ -1,6 +1,7 @@
 CREATE TABLE athlete(
     num_athlete INT PRIMARY KEY,
-    name VARCHAR(50),
+    name VARCHAR(50) UNIQUE,
+	password VARCHAR(50),
 );
 
 CREATE TABLE athlete_weight(
@@ -13,7 +14,8 @@ CREATE TABLE athlete_weight(
 
 CREATE TABLE personal_trainer(
     num_PT INT PRIMARY KEY,
-    name VARCHAR(50),
+    name VARCHAR(50) UNIQUE,
+	password VARCHAR(50),
     description VARCHAR(50),
     tags VARCHAR(50),
     photo VARCHAR(50),
@@ -38,6 +40,7 @@ CREATE TABLE exercise(
     releasedate DATE,
     PT_num INT,
     thumbnail VARCHAR(50),
+	is_time INT,
     FOREIGN KEY (PT_num) REFERENCES personal_trainer(num_PT)
 )
 

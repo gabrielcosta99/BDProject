@@ -49,7 +49,7 @@ namespace PocketCoach
             loadAllWorkoutsWithProgressToolStripMenuItem_Click(sender, e);
         }
 
-        private void loadWorkoutExercises(object sender, EventArgs e,int entry_num)
+        private void loadWorkoutExercises(object sender, EventArgs e, int entry_num)
         {
             if (!verifySGBDConnection())
                 return;
@@ -68,19 +68,28 @@ namespace PocketCoach
                 we.ExerciseProgressID = int.Parse(reader["ExerciseID"].ToString());
                 we.ExerciseName = reader["ExerciseName"].ToString();
                 we.ExerciseSetNumber = int.Parse(reader["SetNumber"].ToString());
-                if (reader["Time"] == DBNull.Value){
+                if (reader["Time"] == DBNull.Value)
+                {
                     we.ExerciseTime = 0;
-                }else{
+                }
+                else
+                {
                     we.ExerciseTime = int.Parse(reader["Time"].ToString());
                 }
-                if (reader["RepsMade"] == DBNull.Value){
+                if (reader["RepsMade"] == DBNull.Value)
+                {
                     we.ExerciseRepsMade = 0;
-                }else{
+                }
+                else
+                {
                     we.ExerciseRepsMade = int.Parse(reader["RepsMade"].ToString());
                 }
-                if (reader["WeightUsed"] == DBNull.Value){
+                if (reader["WeightUsed"] == DBNull.Value)
+                {
                     we.ExerciseWeightUsed = 0;
-                }else{
+                }
+                else
+                {
                     we.ExerciseWeightUsed = int.Parse(reader["WeightUsed"].ToString());
                 }
 
@@ -121,11 +130,6 @@ namespace PocketCoach
             currentWorkout = 0;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex >= 0)
@@ -158,29 +162,38 @@ namespace PocketCoach
             textBox3.Text = we.ExerciseName;
             textBox4.Text = we.ExerciseSetNumber.ToString();
 
-            if (we.ExerciseTime == 0) {
+            if (we.ExerciseTime == 0)
+            {
                 textBox5.Text = "";
                 label8.Visible = false;
                 textBox5.Visible = false;
-            } else {
+            }
+            else
+            {
                 textBox5.Visible = true;
                 label8.Visible = true;
                 textBox5.Text = we.ExerciseTime.ToString();
             }
-            if (we.ExerciseRepsMade == 0) {
+            if (we.ExerciseRepsMade == 0)
+            {
                 textBox6.Text = "";
                 label9.Visible = false;
                 textBox6.Visible = false;
-            } else {
+            }
+            else
+            {
                 textBox6.Visible = true;
                 label9.Visible = true;
                 textBox6.Text = we.ExerciseRepsMade.ToString();
             }
-            if (we.ExerciseWeightUsed == 0) {
+            if (we.ExerciseWeightUsed == 0)
+            {
                 textBox7.Text = "";
                 label10.Visible = false;
                 textBox7.Visible = false;
-            } else{
+            }
+            else
+            {
                 label10.Visible = true;
                 textBox7.Visible = true;
                 textBox7.Text = we.ExerciseWeightUsed.ToString();
@@ -197,9 +210,23 @@ namespace PocketCoach
             textBox7.Text = "";
         }
 
+        private void bttnBackToMenu_Click(object sender, EventArgs e)
+        {
+            Form menu = new AthleteMenu();
+            menu.Show();
+            this.Close();
+        }
+
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

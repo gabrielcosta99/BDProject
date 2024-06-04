@@ -49,6 +49,7 @@
             pictureBox1 = new PictureBox();
             button3 = new Button();
             bttnGoBack = new Button();
+            bttnDelSub = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -248,11 +249,22 @@
             bttnGoBack.UseVisualStyleBackColor = true;
             bttnGoBack.Click += bttnGoBack_Click;
             // 
+            // bttnDelSub
+            // 
+            bttnDelSub.Location = new Point(50, 315);
+            bttnDelSub.Name = "bttnDelSub";
+            bttnDelSub.Size = new Size(119, 38);
+            bttnDelSub.TabIndex = 22;
+            bttnDelSub.Text = "Delete subscription";
+            bttnDelSub.UseVisualStyleBackColor = true;
+            bttnDelSub.Click += bttnDelSub_Click;
+            // 
             // Subscriptions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(780, 340);
+            ClientSize = new Size(780, 365);
+            Controls.Add(bttnDelSub);
             Controls.Add(bttnGoBack);
             Controls.Add(button3);
             Controls.Add(pictureBox1);
@@ -306,5 +318,6 @@
         private PictureBox pictureBox1;
         private Button button3;
         private Button bttnGoBack;
+        private Button bttnDelSub;
     }
 }

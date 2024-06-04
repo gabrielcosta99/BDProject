@@ -14,6 +14,7 @@ namespace PocketCoach
     public partial class Subscriptions : Form
     {
         private SqlConnection cn;
+        private int currentPTSubbed;
         private int currentPT;
 
         public Subscriptions()
@@ -77,9 +78,17 @@ namespace PocketCoach
 
             while (reader.Read())
             {
-                listBox1.Items.Add(reader["name"].ToString());
+                PersonalTrainer pt = new PersonalTrainer();
+                pt.NumPT = int.Parse(reader["num_PT"].ToString());
+                pt.Name = reader["name"].ToString();
+                pt.Description = reader["description"].ToString();
+                pt.Tags = reader["tags"].ToString();
+                pt.Photo = reader["photo"].ToString();
+                pt.Price = int.Parse(reader["price"].ToString());
+                pt.Slots = int.Parse(reader["slots"].ToString());
+                listBox1.Items.Add(pt);
             }
-
+            currentPTSubbed = 0;
             reader.Close();
             cn.Close();
         }
@@ -95,7 +104,10 @@ namespace PocketCoach
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (listBox1.SelectedIndex >= 0)
+            {
+                currentPTSubbed = listBox1.SelectedIndex;
+            }
         }
 
         private bool verifySGBDConnection()
@@ -180,7 +192,7 @@ namespace PocketCoach
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Subscribed Successfully!");
                 listBox2.Items.Remove(pt);
-                listBox1.Items.Add(pt.Name);
+                listBox1.Items.Add(pt);
             }
             catch (Exception ex)
             {
@@ -190,6 +202,31 @@ namespace PocketCoach
             cn.Close();
 
         }
+        private void bttnDelSub_Click(object sender, EventArgs e)
+        {
+            // subscribe athlete to PT selected
+            if (!verifySGBDConnection())
+                return;
+
+            PersonalTrainer pt = (PersonalTrainer)listBox1.Items[currentPTSubbed];
+            SqlCommand cmd = new SqlCommand("DELETE FROM subscription WHERE num_athlete=@num_athlete and num_PT=@num_PT", cn);
+            cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
+            cmd.Parameters.AddWithValue("@num_PT", pt.NumPT);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Removed subscription Successfully!");
+                listBox1.Items.Remove(pt);
+                listBox2.Items.Add(pt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sem slots disponíveis para este Personal Trainer.");
+            }
+
+            cn.Close();
+        }
 
         private void bttnGoBack_Click(object sender, EventArgs e)
         {
@@ -197,5 +234,7 @@ namespace PocketCoach
             menu.Show();
             this.Close();
         }
+
+       
     }
 }

@@ -21,9 +21,9 @@ CREATE PROCEDURE GetAccessibleWorkouts
 AS
 BEGIN
     SELECT w.num_workout, w.title,w.tags,w.premium,w.PT_num 
-	FROM athlete join subscription on athlete.num_athlete=subscription.num_athlete 
-		join workout as w on subscription.num_PT=w.PT_num 
-	WHERE athlete.num_athlete=@num_athlete or premium=0;
+	FROM athlete JOIN subscription ON athlete.num_athlete=subscription.num_athlete 
+		JOIN workout AS w ON subscription.num_PT=w.PT_num 
+	WHERE athlete.num_athlete=@num_athlete OR premium=0;
 
 END
 
@@ -40,26 +40,31 @@ BEGIN
     SET NOCOUNT ON;
 
     -- Seleciona o progresso dos exercícios de time
-    select  tp.num_ex AS ExerciseID,
+    SELECT  tp.num_ex AS ExerciseID,
 		e.name AS ExerciseName,
         tp.set_num AS SetNumber,
 		tp.time AS Time,
         NULL AS RepsMade,
         NULL AS WeightUsed
-	from time_progress as tp
-		join workout_progress on workout_progress.entry_num=tp.entry_workout_prog
-		join exercise as e on tp.num_ex = e.num_ex
-	where workout_progress.entry_num = @entry_num
+	FROM time_progress AS tp
+		JOIN workout_progress ON workout_progress.entry_num=tp.entry_workout_prog
+		JOIN exercise AS e ON tp.num_ex = e.num_ex
+	WHERE workout_progress.entry_num = @entry_num
 
 	UNION ALL
 
-	select rp.num_ex as ExerciseID,e.name AS ExerciseName, rp.set_num,NULL as time,rp.reps_made,rp.weight_used
-	from reps_progress as rp
-		join workout_progress on workout_progress.entry_num=rp.entry_workout_prog
-		join exercise as e on rp.num_ex = e.num_ex
-	where workout_progress.entry_num = @entry_num
+	SELECT rp.num_ex AS ExerciseID,
+        e.name AS ExerciseName,
+        rp.set_num,
+        NULL AS time,
+        rp.reps_made,
+        rp.weight_used
+	FROM reps_progress AS rp
+		JOIN workout_progress ON workout_progress.entry_num=rp.entry_workout_prog
+		JOIN exercise AS e ON rp.num_ex = e.num_ex
+	WHERE workout_progress.entry_num = @entry_num
 
-	order by SetNumber, ExerciseID
+	ORDER BY SetNumber, ExerciseID
 
 END
 /*
@@ -112,9 +117,9 @@ BEGIN
 END
 
 
-*/
-GO
 
+GO
+*/
 -- to test the SP : EXEC GetWorkoutExerciseProgressForAthlete 1, 2;
 
 -- SP to get Athlete Workout Progress with repective Workout data

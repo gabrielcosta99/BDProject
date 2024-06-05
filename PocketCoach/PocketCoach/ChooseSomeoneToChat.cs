@@ -19,6 +19,8 @@ namespace PocketCoach
         public static int numPT;
         public static int numAthlete;
         public static string name;
+        public static int chat_num; 
+
         public ChooseSomeoneToChat()
         {
             InitializeComponent();
@@ -92,17 +94,39 @@ namespace PocketCoach
 
         public void bttnChat_Click(object sender, EventArgs e)
         {
+            if (!verifySGBDConnection())
+                return;
+
             if (!UserLogin.isPT)
             {
                 PersonalTrainer pt = (PersonalTrainer)listBox1.Items[currentPerson];
                 numPT = pt.NumPT;
                 name = pt.Name;
+
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM chat WHERE athlete_num=@athlete_num and PT_num=@PT_num", cn);
+                cmd.Parameters.AddWithValue("@athlete_num", UserLogin.athlete_num);
+                cmd.Parameters.AddWithValue("@PT_num", numPT);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    chat_num = int.Parse(reader["num_chat"].ToString());
+                }
             }
             else
             {
                 Athlete at = (Athlete)listBox1.Items[currentPerson];
                 numAthlete = at.NumAthlete;
                 name = at.Name;
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM chat WHERE athlete_num=@athlete_num and PT_num=@PT_num", cn);
+                cmd.Parameters.AddWithValue("@athlete_num", numAthlete);
+                cmd.Parameters.AddWithValue("@PT_num", UserLogin.PTNum);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    chat_num = int.Parse(reader["num_chat"].ToString());
+                }
             }
             
 

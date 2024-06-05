@@ -33,7 +33,7 @@ CREATE TABLE subscription(
 
 CREATE TABLE exercise(
     num_ex INT PRIMARY KEY,
-    path VARCHAR(50),
+    path VARCHAR(100),
     name VARCHAR(50),
     description VARCHAR(1000),
     muscletargets VARCHAR(50),

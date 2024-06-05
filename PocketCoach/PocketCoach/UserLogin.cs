@@ -61,7 +61,7 @@ namespace PocketCoach
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-           
+
             if (checkBox1.Checked)
             {
                 isPT = true;
@@ -78,24 +78,24 @@ namespace PocketCoach
             if (isPT)
             {
                 PTNum = LoginPT();
-                if(PTNum != -1)
+                if (PTNum != -1)
                 {
                     Form form2 = new PersonalTrainerMenu();
                     form2.Show();
                     this.Hide();
                 }
-                
+
             }
             else
             {
                 athlete_num = LoginAthlete();
-                if(athlete_num != -1 )
+                if (athlete_num != -1)
                 {
                     Form athleteMenu = new AthleteMenu();
                     athleteMenu.Show();
                     this.Hide();
                 }
-                
+
             }
         }
         public int LoginPT()
@@ -105,10 +105,10 @@ namespace PocketCoach
                 MessageBox.Show("Unable to connect to database");
                 return -1;
             }
-               
+
             SqlCommand cmd = new SqlCommand("SELECT num_PT FROM personal_trainer WHERE name=@name and password=@password", cn);
             cmd.Parameters.AddWithValue("@name", txtUsername.Text);
-            cmd.Parameters.AddWithValue("@password",txtPassword.Text);
+            cmd.Parameters.AddWithValue("@password", txtPassword.Text);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -153,7 +153,7 @@ namespace PocketCoach
                 reader.Close();
                 MessageBox.Show("Wrong username or password");
                 return -1;
-                
+
             }
             reader.Close();
 
@@ -182,6 +182,13 @@ namespace PocketCoach
         private void label2_Click(object sender, EventArgs e) // Personal Trainer Number
         {
 
+        }
+
+        private void bttnRegister_Click(object sender, EventArgs e)
+        {
+            Form register = new Register();
+            register.Show();
+            this.Hide();
         }
     }
 }

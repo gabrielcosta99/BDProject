@@ -19,6 +19,7 @@ namespace PocketCoach
         public Chat()
         {
             InitializeComponent();
+            chat_num = ChooseSomeoneToChat.chat_num;
         }
 
         public void Chat_Load(object sender, EventArgs e)
@@ -34,41 +35,50 @@ namespace PocketCoach
                 cmd.Parameters.AddWithValue("@athlete_num", UserLogin.athlete_num);
                 cmd.Parameters.AddWithValue("@PT_num", ChooseSomeoneToChat.numPT);
                 SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                /*
+                if (!reader.HasRows)
                 {
-                    int sent_by_user = int.Parse(reader["sent_by_user"].ToString());
-                    string text = reader["text"].ToString();
-                    chat_num = int.Parse(reader["chat_num"].ToString());
-                    int messagesLength = txtInMSG.TextLength;
-                    if (sent_by_user == 1)
-                    {
-                        txtInMSG.AppendText(text + "\n");
-                        txtInMSG.Select(messagesLength, text.Length + 1);
-
-                        // Align the selected text to the right
-                        txtInMSG.SelectionAlignment = HorizontalAlignment.Right;
-                        txtInMSG.SelectionBackColor = Color.Green; // Change to the desired background color
-                        txtInMSG.SelectionColor = Color.White; // Change to the desired text color
-
-
-                    }
-                    else
-                    {
-                        txtInMSG.AppendText(":>> " + text + "\n");
-                        txtInMSG.Select(messagesLength, text.Length + 4);
-
-
-                        // Align the selected text to the right
-                        txtInMSG.SelectionAlignment = HorizontalAlignment.Left;
-                        txtInMSG.SelectionBackColor = Color.Gray; // Change to the desired background color
-                        txtInMSG.SelectionColor = Color.White; // Change to the desired text color
-
-
-                    }
-                    // Deselect the text
-                    txtInMSG.SelectionLength = 0;
+                    // No rows returned, handle this case
+                    MessageBox.Show("No previous chat found with this personal trainer.");
                 }
+                else
+                {
+                    */
+                    while (reader.Read())
+                    {
+                        int sent_by_user = int.Parse(reader["sent_by_user"].ToString());
+                        string text = reader["text"].ToString();
+                        //chat_num = int.Parse(reader["chat_num"].ToString());
+                        int messagesLength = txtInMSG.TextLength;
+                        if (sent_by_user == 1)
+                        {
+                            txtInMSG.AppendText(text + "\n");
+                            txtInMSG.Select(messagesLength, text.Length + 1);
+
+                            // Align the selected text to the right
+                            txtInMSG.SelectionAlignment = HorizontalAlignment.Right;
+                            txtInMSG.SelectionBackColor = Color.Green; // Change to the desired background color
+                            txtInMSG.SelectionColor = Color.White; // Change to the desired text color
+
+
+                        }
+                        else
+                        {
+                            txtInMSG.AppendText(":>> " + text + "\n");
+                            txtInMSG.Select(messagesLength, text.Length + 4);
+
+
+                            // Align the selected text to the right
+                            txtInMSG.SelectionAlignment = HorizontalAlignment.Left;
+                            txtInMSG.SelectionBackColor = Color.Gray; // Change to the desired background color
+                            txtInMSG.SelectionColor = Color.White; // Change to the desired text color
+
+
+                        }
+                        // Deselect the text
+                        txtInMSG.SelectionLength = 0;
+                    }
+                //}
                 reader.Close();
                 cn.Close();
             }
@@ -85,7 +95,7 @@ namespace PocketCoach
                 {
                     int sent_by_user = int.Parse(reader["sent_by_user"].ToString());
                     string text = reader["text"].ToString();
-                    chat_num = int.Parse(reader["chat_num"].ToString());
+                    //chat_num = int.Parse(reader["chat_num"].ToString());
                     int messagesLength = txtInMSG.TextLength;
                     if (sent_by_user == 1)
                     {

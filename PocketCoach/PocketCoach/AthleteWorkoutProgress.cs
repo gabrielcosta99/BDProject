@@ -56,7 +56,7 @@ namespace PocketCoach
             // arguments are workoutProgressID, num_athlete
             SqlCommand cmd = new SqlCommand("EXEC GetWorkoutExerciseProgressForAthlete @num_workout", cn);
             cmd.Parameters.AddWithValue("@num_workout", entry_num);
-            //cmd.Parameters.AddWithValue("@num_workout", workoutProgressID);
+            //cmd.Parameters.AddWithValue("@num_workout", workoutPr ogressID);
             //cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
 
             SqlDataReader reader = cmd.ExecuteReader();

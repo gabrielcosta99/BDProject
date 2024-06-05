@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace PocketCoach
 {
@@ -132,9 +133,18 @@ namespace PocketCoach
             textBox3.Text = pt.Tags;
             textBox4.Text = pt.Price.ToString();
             textBox5.Text = pt.Slots.ToString();
+            
+            Image originalImage = Image.FromFile(pt.Photo);
+            Image resizedImage = ResizeImage(originalImage, pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.Image = resizedImage;
             pictureBox1.ImageLocation = pt.Photo;
 
         }
+        private Image ResizeImage(Image imgToResize, int width, int height)
+        {
+            return (Image)(new Bitmap(imgToResize, new Size(width, height)));
+        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -193,21 +203,62 @@ namespace PocketCoach
                 MessageBox.Show("Subscribed Successfully!");
                 listBox2.Items.Remove(pt);
                 listBox1.Items.Add(pt);
+
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Sem slots disponíveis para este Personal Trainer.");
             }
 
+            
+
+            // create chat
+            int num_chat = GetMaxChatNum() + 1;
+            if (!verifySGBDConnection())
+                return;
+            cmd = new SqlCommand("INSERT INTO chat VALUES (@num_chat, @athlete_num,@PT_num)", cn);
+            cmd.Parameters.AddWithValue("@num_chat", num_chat);
+            cmd.Parameters.AddWithValue("@athlete_num", UserLogin.athlete_num);
+            cmd.Parameters.AddWithValue("@PT_num", pt.NumPT);
+            cmd.ExecuteNonQuery();
+
+
             cn.Close();
 
+        }
+        private int GetMaxChatNum()
+        {
+            if (!verifySGBDConnection())
+                return 0;
+
+            int maxEntryNum = 0;
+            SqlCommand cmd = new SqlCommand("SELECT MAX(num_chat) AS max_entry_num FROM chat", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+
+            if (reader.Read())
+            {
+                try
+                {
+                    maxEntryNum = int.Parse(reader["max_entry_num"].ToString());
+                }
+                catch
+                {
+                    maxEntryNum = 0;
+                }
+            }
+            reader.Close();
+            cn.Close();
+
+            return maxEntryNum;
         }
         private void bttnDelSub_Click(object sender, EventArgs e)
         {
             // subscribe athlete to PT selected
             if (!verifySGBDConnection())
                 return;
-
+            /*
             PersonalTrainer pt = (PersonalTrainer)listBox1.Items[currentPTSubbed];
             SqlCommand cmd = new SqlCommand("DELETE FROM subscription WHERE num_athlete=@num_athlete and num_PT=@num_PT", cn);
             cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
@@ -224,6 +275,18 @@ namespace PocketCoach
             {
                 MessageBox.Show("Sem slots disponíveis para este Personal Trainer.");
             }
+            */
+            PersonalTrainer pt = (PersonalTrainer)listBox1.Items[currentPTSubbed];
+            SqlCommand cmd = new SqlCommand("EXEC DeleteSub @num_athlete, @num_PT", cn);
+            cmd.Parameters.AddWithValue("@num_athlete", UserLogin.athlete_num);
+            cmd.Parameters.AddWithValue("@num_PT", pt.NumPT);
+
+            
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Removed subscription Successfully!");
+                listBox1.Items.Remove(pt);
+                listBox2.Items.Add(pt);
+            
 
             cn.Close();
         }
@@ -235,6 +298,9 @@ namespace PocketCoach
             this.Close();
         }
 
-       
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

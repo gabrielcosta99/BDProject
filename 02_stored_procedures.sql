@@ -148,6 +148,27 @@ BEGIN
         wp.Athlete_num = @num_athlete
 END
 
+
+GO
+CREATE PROCEDURE DeleteSub
+    @num_athlete INT,
+	@num_PT INT
+
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+	DELETE FROM subscription WHERE num_athlete=@num_athlete and num_PT=@num_PT;
+	
+	DECLARE @num_chat INT;
+	select @num_chat=num_chat from chat where athlete_num=@num_athlete and PT_num=@num_PT;
+
+	DELETE from message where chat_num = @num_chat;
+	DELETE from chat where num_chat = @num_chat;
+
+
+END
+
 -- to test the SP : EXEC GetAthleteWorkoutProgressRespData 2;
 
 -- To drop a SP, use the following command:

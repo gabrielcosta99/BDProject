@@ -31,11 +31,12 @@
             bttnCreateWorkout = new Button();
             bttnChat = new Button();
             bttnLogout = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // bttnCreateWorkout
             // 
-            bttnCreateWorkout.Location = new Point(67, 39);
+            bttnCreateWorkout.Location = new Point(76, 131);
             bttnCreateWorkout.Name = "bttnCreateWorkout";
             bttnCreateWorkout.Size = new Size(151, 67);
             bttnCreateWorkout.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // bttnChat
             // 
-            bttnChat.Location = new Point(67, 133);
+            bttnChat.Location = new Point(76, 224);
             bttnChat.Name = "bttnChat";
             bttnChat.Size = new Size(151, 67);
             bttnChat.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // bttnLogout
             // 
-            bttnLogout.Location = new Point(87, 297);
+            bttnLogout.Location = new Point(89, 332);
             bttnLogout.Name = "bttnLogout";
             bttnLogout.Size = new Size(114, 41);
             bttnLogout.TabIndex = 2;
@@ -63,11 +64,22 @@
             bttnLogout.UseVisualStyleBackColor = true;
             bttnLogout.Click += bttnLogout_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(76, 35);
+            button1.Name = "button1";
+            button1.Size = new Size(151, 67);
+            button1.TabIndex = 3;
+            button1.Text = "Create Exercise";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // PersonalTrainerMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(312, 409);
+            Controls.Add(button1);
             Controls.Add(bttnLogout);
             Controls.Add(bttnChat);
             Controls.Add(bttnCreateWorkout);
@@ -82,5 +94,6 @@
         private Button bttnCreateWorkout;
         private Button bttnChat;
         private Button bttnLogout;
+        private Button button1;
     }
 }

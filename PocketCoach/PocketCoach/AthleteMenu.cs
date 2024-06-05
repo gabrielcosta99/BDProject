@@ -51,6 +51,11 @@ namespace PocketCoach
             this.Hide();
         }
 
-        
+        private void bttnChat_Click(object sender, EventArgs e)
+        {
+            Form choosePT = new ChooseSomeoneToChat();
+            choosePT.Show();
+            this.Hide();
+        }
     }
 }

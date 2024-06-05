@@ -28,6 +28,7 @@ namespace PocketCoach
         private void UserLogin_Load(object sender, EventArgs e)
         {
             cn = getSGBDConnection();
+            isPT = false;
         }
 
 
@@ -79,8 +80,7 @@ namespace PocketCoach
                 PTNum = LoginPT();
                 if(PTNum != -1)
                 {
-                    checkBox1.Checked = false;
-                    Form form2 = new CreateWorkout();
+                    Form form2 = new PersonalTrainerMenu();
                     form2.Show();
                     this.Hide();
                 }
@@ -91,7 +91,6 @@ namespace PocketCoach
                 athlete_num = LoginAthlete();
                 if(athlete_num != -1 )
                 {
-                    checkBox1.Checked = false;
                     Form athleteMenu = new AthleteMenu();
                     athleteMenu.Show();
                     this.Hide();

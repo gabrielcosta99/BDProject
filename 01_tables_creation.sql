@@ -57,7 +57,7 @@ CREATE TABLE time_exercise(
 
 CREATE TABLE chat(
     num_chat INT PRIMARY KEY,
-    Athlete_num INT,
+    athlete_num INT,
     PT_num INT,   
     FOREIGN KEY (PT_num) REFERENCES personal_trainer(num_PT),
     FOREIGN KEY (Athlete_num) REFERENCES athlete(num_athlete)

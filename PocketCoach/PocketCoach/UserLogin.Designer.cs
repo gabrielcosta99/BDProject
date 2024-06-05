@@ -39,9 +39,10 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(121, 158);
+            checkBox1.Location = new Point(138, 211);
+            checkBox1.Margin = new Padding(3, 4, 3, 4);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(120, 19);
+            checkBox1.Size = new Size(149, 24);
             checkBox1.TabIndex = 0;
             checkBox1.Text = "Is Personal Trainer";
             checkBox1.UseVisualStyleBackColor = true;
@@ -50,9 +51,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(59, 74);
+            label1.Location = new Point(67, 99);
             label1.Name = "label1";
-            label1.Size = new Size(60, 15);
+            label1.Size = new Size(75, 20);
             label1.TabIndex = 1;
             label1.Text = "Username";
             label1.Click += label1_Click;
@@ -60,34 +61,38 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(59, 118);
+            label2.Location = new Point(67, 157);
             label2.Name = "label2";
-            label2.Size = new Size(57, 15);
+            label2.Size = new Size(70, 20);
             label2.TabIndex = 2;
             label2.Text = "Password";
             label2.Click += label2_Click;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(141, 71);
+            txtUsername.Location = new Point(161, 95);
+            txtUsername.Margin = new Padding(3, 4, 3, 4);
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(100, 23);
+            txtUsername.Size = new Size(114, 27);
             txtUsername.TabIndex = 4;
             txtUsername.TextChanged += txtAthleteNum_TextChanged;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(141, 115);
+            txtPassword.Location = new Point(161, 153);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(100, 23);
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(114, 27);
             txtPassword.TabIndex = 5;
             txtPassword.TextChanged += txtPTNum_TextChanged;
             // 
             // bttnSelect
             // 
-            bttnSelect.Location = new Point(141, 201);
+            bttnSelect.Location = new Point(161, 268);
+            bttnSelect.Margin = new Padding(3, 4, 3, 4);
             bttnSelect.Name = "bttnSelect";
-            bttnSelect.Size = new Size(75, 23);
+            bttnSelect.Size = new Size(86, 31);
             bttnSelect.TabIndex = 6;
             bttnSelect.Text = "Select";
             bttnSelect.UseVisualStyleBackColor = true;
@@ -95,15 +100,16 @@
             // 
             // UserLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(351, 287);
+            ClientSize = new Size(401, 383);
             Controls.Add(bttnSelect);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(checkBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UserLogin";
             Text = "Select user";
             Load += UserLogin_Load;

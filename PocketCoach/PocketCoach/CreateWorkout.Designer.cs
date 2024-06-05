@@ -48,7 +48,7 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 76);
+            listBox1.Location = new Point(22, 110);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(123, 244);
             listBox1.TabIndex = 0;
@@ -57,9 +57,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(312, 24);
+            label1.Font = new Font("Segoe UI", 18F);
+            label1.Location = new Point(189, 9);
             label1.Name = "label1";
-            label1.Size = new Size(99, 15);
+            label1.Size = new Size(198, 32);
             label1.TabIndex = 1;
             label1.Text = "Workout creation";
             label1.Click += label1_Click;
@@ -67,7 +68,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(323, 94);
+            label2.Location = new Point(314, 113);
             label2.Name = "label2";
             label2.Size = new Size(74, 15);
             label2.TabIndex = 2;
@@ -77,7 +78,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(343, 214);
+            label3.Location = new Point(334, 220);
             label3.Name = "label3";
             label3.Size = new Size(54, 15);
             label3.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             // txtTitle
             // 
-            txtTitle.Location = new Point(403, 91);
+            txtTitle.Location = new Point(394, 110);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(100, 23);
             txtTitle.TabIndex = 4;
@@ -94,7 +95,7 @@
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(403, 214);
+            listBox2.Location = new Point(394, 220);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(120, 94);
             listBox2.TabIndex = 5;
@@ -102,9 +103,9 @@
             // 
             // bttnAdd
             // 
-            bttnAdd.Location = new Point(197, 152);
+            bttnAdd.Location = new Point(180, 186);
             bttnAdd.Name = "bttnAdd";
-            bttnAdd.Size = new Size(67, 23);
+            bttnAdd.Size = new Size(77, 37);
             bttnAdd.TabIndex = 6;
             bttnAdd.Text = "Add";
             bttnAdd.UseVisualStyleBackColor = true;
@@ -112,9 +113,9 @@
             // 
             // bttnRemove
             // 
-            bttnRemove.Location = new Point(417, 332);
+            bttnRemove.Location = new Point(411, 320);
             bttnRemove.Name = "bttnRemove";
-            bttnRemove.Size = new Size(75, 23);
+            bttnRemove.Size = new Size(83, 41);
             bttnRemove.TabIndex = 7;
             bttnRemove.Text = "Remove";
             bttnRemove.UseVisualStyleBackColor = true;
@@ -123,7 +124,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 58);
+            label4.Location = new Point(22, 92);
             label4.Name = "label4";
             label4.Size = new Size(86, 15);
             label4.TabIndex = 9;
@@ -131,9 +132,9 @@
             // 
             // bttnUpload
             // 
-            bttnUpload.Location = new Point(197, 373);
+            bttnUpload.Location = new Point(171, 400);
             bttnUpload.Name = "bttnUpload";
-            bttnUpload.Size = new Size(122, 23);
+            bttnUpload.Size = new Size(164, 71);
             bttnUpload.TabIndex = 10;
             bttnUpload.Text = "Upload Workout";
             bttnUpload.UseVisualStyleBackColor = true;
@@ -142,7 +143,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(368, 132);
+            label5.Location = new Point(359, 151);
             label5.Name = "label5";
             label5.Size = new Size(29, 15);
             label5.TabIndex = 11;
@@ -150,7 +151,7 @@
             // 
             // txtTags
             // 
-            txtTags.Location = new Point(403, 129);
+            txtTags.Location = new Point(394, 148);
             txtTags.Name = "txtTags";
             txtTags.Size = new Size(176, 23);
             txtTags.TabIndex = 12;
@@ -159,7 +160,7 @@
             // chkIsPremium
             // 
             chkIsPremium.AutoSize = true;
-            chkIsPremium.Location = new Point(429, 167);
+            chkIsPremium.Location = new Point(420, 186);
             chkIsPremium.Name = "chkIsPremium";
             chkIsPremium.Size = new Size(86, 19);
             chkIsPremium.TabIndex = 13;
@@ -169,9 +170,9 @@
             // 
             // bttnLogOut
             // 
-            bttnLogOut.Location = new Point(50, 468);
+            bttnLogOut.Location = new Point(530, 463);
             bttnLogOut.Name = "bttnLogOut";
-            bttnLogOut.Size = new Size(75, 23);
+            bttnLogOut.Size = new Size(87, 38);
             bttnLogOut.TabIndex = 14;
             bttnLogOut.Text = "LogOut";
             bttnLogOut.UseVisualStyleBackColor = true;
@@ -181,7 +182,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 518);
+            ClientSize = new Size(629, 513);
             Controls.Add(bttnLogOut);
             Controls.Add(chkIsPremium);
             Controls.Add(txtTags);

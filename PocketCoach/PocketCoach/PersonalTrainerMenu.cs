@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PocketCoach
 {
     public partial class PersonalTrainerMenu : Form
     {
+        private SqlConnection cn;
+
         public PersonalTrainerMenu()
         {
             InitializeComponent();
@@ -19,7 +22,18 @@ namespace PocketCoach
 
         private void PersonalTrainerMenu_Load(object sender, EventArgs e)
         {
+            cn = UserLogin.getSGBDConnection();
+        }
 
+        private bool verifySGBDConnection()
+        {
+            if (cn == null)
+                cn = UserLogin.getSGBDConnection();
+
+            if (cn.State != ConnectionState.Open)
+                cn.Open();
+
+            return cn.State == ConnectionState.Open;
         }
 
         private void bttnCreateWorkout_Click(object sender, EventArgs e)
@@ -49,6 +63,29 @@ namespace PocketCoach
             Form exerciseCreate = new CreateExercise();
             exerciseCreate.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+                return;
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete your account?", "Delete Account", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "DELETE FROM personal_trainer WHERE num_PT=@num_PT;";
+                cmd.Parameters.AddWithValue("@num_PT", UserLogin.PTNum);
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                
+                MessageBox.Show("Account deleted successfully");
+                
+                Form userLogin = new UserLogin();
+                userLogin.Show();
+                this.Hide();
+            }
         }
     }
 }

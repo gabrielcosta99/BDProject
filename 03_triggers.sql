@@ -75,8 +75,8 @@ BEGIN
     DELETE FROM chat WHERE Athlete_num = @num_athlete;
     
     -- Before deleting workout_progress, delete all related data
-    DELETE FROM time_progress WHERE entry_num IN (SELECT entry_num FROM workout_progress WHERE Athlete_num = @num_athlete);
-    DELETE FROM reps_progress WHERE entry_num IN (SELECT entry_num FROM workout_progress WHERE Athlete_num = @num_athlete);
+    DELETE FROM time_progress WHERE entry_workout_prog IN (SELECT entry_num FROM workout_progress WHERE Athlete_num = @num_athlete);
+    DELETE FROM reps_progress WHERE entry_workout_prog IN (SELECT entry_num FROM workout_progress WHERE Athlete_num = @num_athlete);
     DELETE FROM workout_progress WHERE Athlete_num = @num_athlete;
     
     DELETE FROM athlete WHERE num_athlete = @num_athlete;
